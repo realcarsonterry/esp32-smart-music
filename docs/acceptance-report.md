@@ -1,7 +1,7 @@
 # 验收报告（2026-10-13，Asia/Singapore）
 
 > 历史阶段报告。当前状态以 [最终软件审查](final-review-20261013.md) 为准：ASR 已实现并离线测试，
-> ESP-IDF 5.3.5 已在干净目录完成 ESP32-S3 构建、size、size-components。下文的“ASR 未实现”、
+> 后续真实云端 LLM/ASR（中文 TTS）验收也已通过；ESP-IDF 5.3.5 已完成干净构建、size、size-components。下文的“ASR 未实现”、
 > “IDF 未安装/构建”等属于较早阶段记录，不代表当前状态。发送与演示请读 [START_HERE](../START_HERE.md)。
 
 本文保留 request_id/可移植性修订时的历史验收。后续 ASR 已实现并离线验证，最新状态见 [ASR 验收](asr-offline-verification.md)。

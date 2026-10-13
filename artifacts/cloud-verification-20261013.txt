@@ -1,0 +1,25 @@
+PASS /health
+PASS /api/v1/info
+PASS missing-token: HTTP 401/UNAUTHORIZED
+PASS wrong-token: HTTP 401/UNAUTHORIZED
+PASS invalid-audio: HTTP 400/INVALID_AUDIO
+PASS oversize-request: HTTP 413/REQUEST_TOO_LARGE
+PASS text-rules-warm: HTTP 200; 96 BPM; C major; C KS -> 320000 PCM samples
+PASS text-ai-warm: HTTP 200; 96 BPM; C major; C KS -> 320000 PCM samples
+PASS text-rules-sad: HTTP 200; 72 BPM; A minor; C KS -> 426667 PCM samples
+PASS text-ai-sad: HTTP 200; 72 BPM; A minor; C KS -> 426667 PCM samples
+PASS text-rules-rock: HTTP 200; 120 BPM; E minor; C KS -> 256000 PCM samples
+PASS text-ai-rock: HTTP 200; 120 BPM; E minor; C KS -> 256000 PCM samples
+PASS audio-rules-warm: HTTP 200; 96 BPM; C major; C KS -> 320000 PCM samples
+  actual ASR transcript: 温暖轻快的吉他伴奏
+PASS audio-ai-warm: HTTP 200; 96 BPM; C major; C KS -> 320000 PCM samples
+  actual ASR transcript: 温暖轻快的吉他伴奏
+PASS audio-rules-sad: HTTP 200; 72 BPM; A minor; C KS -> 426667 PCM samples
+  actual ASR transcript: 悲伤慢的吉他伴奏
+PASS audio-ai-sad: HTTP 200; 72 BPM; A minor; C KS -> 426667 PCM samples
+  actual ASR transcript: 悲伤慢的吉他伴奏
+PASS audio-rules-rock: HTTP 200; 120 BPM; E minor; C KS -> 256000 PCM samples
+  actual ASR transcript: 摇滚 120 BPM
+PASS audio-ai-rock: HTTP 200; 120 BPM; E minor; C KS -> 256000 PCM samples
+  actual ASR transcript: 摇滚 120 BPM
+Cloud verification PASS: 6 protocol/security checks; 12 live music cases.

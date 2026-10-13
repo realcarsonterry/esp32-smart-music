@@ -5,11 +5,16 @@
 ## 提交判断
 
 可以提交为“可复现的软件原型与 ESP32-S3 固件源码”，并提供电脑现场演示。
-尚不能声称原题要求的云端语音与 ESP32 实机全链路已经通过验收。
-公开 GitHub 仓库能方便 HR 与技术面试官阅读，但不会自动补齐这些验收项，也不会自动部署 Worker。
+Cloudflare 正式部署、真实 LLM 与真实 ASR 服务调用已通过验收，语音样本为中文 Windows TTS。
+真人语音完整测试和 ESP32 实机仍未通过验收，不能声称开发板录音到播放的全链路已完成。
+
+线上 API：**https://esp32-smart-music-api.esp32-smart-music-backend.workers.dev**。
+[health](https://esp32-smart-music-api.esp32-smart-music-backend.workers.dev/health) 与
+[info](https://esp32-smart-music-api.esp32-smart-music-backend.workers.dev/api/v1/info) 可匿名检查；生成接口要求 bearer 令牌。
 
 检查了 backend 的 Worker/ASR/AI/规则/校验器、schema、共享 C11 KS、JSON 解析器、
-固件控制/Wi-Fi/HTTPS/I2S 源码，以及测试、脚本和提交文档。没有连接硬件、录音、人工试听或调用真实模型。
+固件控制/Wi-Fi/HTTPS/I2S 源码，以及测试、脚本和提交文档。已正式部署并调用真实模型，未连接 ESP32 硬件。
+真人录音仅开始了一个样本，完整真人验收未完成；没有人工音质评分或实机音质测量。
 本次未发现现有测试和已审代码中必须修改才能通过本地文本闭环的阻断问题；这不等于代码在实机上没有问题。
 
 ## 已有实现与实际验证
@@ -38,16 +43,33 @@
   不能据此承诺 Wi-Fi/TLS、JSON 解析与 KS 上下文同时运行时内存充足。
 - **新增电脑演示 PASS**：scripts/demo.ps1 -NoPlay 实际生成摇滚 120 BPM、E minor、Em/D/C/D、
   256000 样本 WAV；自动打开播放器的分支交由用户现场操作，未模拟人工听感。
-- **新增 API 客户端 PASS（仅本地）**：demo-api.mjs 通过真实 loopback HTTP 生成 110 BPM，
+- **API 客户端 PASS（本地与云端）**：demo-api.mjs 通过真实 loopback HTTP 生成 110 BPM，
   严格校验后交给 C 渲染；缺令牌得到 401，非法 WAV 在上传前被拒绝。
-- **生产配置 PARTIAL**：独立 wrangler.production.jsonc 有 AI 绑定、强制认证、禁用 mock，
-  Wrangler deploy --dry-run 打包退出 0。dry-run 没有上传代码，没有公网 URL，也不验证模型服务。
+  随后已请求生产 HTTPS API 的真实 LLM 模式并经共享 C KS 输出 WAV。
+- **Cloudflare 正式部署 PASS**：wrangler.production.jsonc 已上线，AI 绑定启用、AUTH_REQUIRED=1、mock 禁用。
+  Worker 为 esp32-smart-music-api，部署版本 925721b1-5edf-4993-8875-ada3d1afe54e，部署命令退出 0。
+  DEVICE_TOKEN 作为 Cloudflare Secret 保存，不在源码、公开日志或仓库中。
+- **真实云端验收 PASS（限定样本）**：2026-10-13 20:01:25 至 20:01:57（Asia/Singapore），
+  health/info、无令牌 401、错令牌 401、非法音频 400、超大请求 413 共 6 项通过；
+  温暖轻快/悲伤慢/摇滚 120 BPM 三组文本各走 rules/ai，三组中文 TTS WAV 各走 ASR+rules/ASR+ai，
+  共 12 个音乐请求通过。每个 JSON 都经严格校验和实际 C 解析/KS 渲染，WAV 格式、长度、非静音与 SHA256 均记录。
+  实际转写分别为“温暖轻快的吉他伴奏”“悲伤慢的吉他伴奏”“摇滚 120 BPM”；速度为 96/72/120 BPM，
+  调性为 C major/A minor/E minor。输入来源是 Microsoft Huihui Desktop TTS，不是真人或 ESP32 麦克风录音。
 
 标准 WAV SHA256：`D3358F8CB9DBA6F5A25ABA1D0030D8578F4D4B9C2ED1C8CD326736F245A94BBA`。
 
 ## 证据与命令
 
 以下日志均来自本次实际运行，成功命令退出 0：
+
+- `node node_modules/wrangler/bin/wrangler.js deploy --config backend/wrangler.production.jsonc` →
+  [正式部署日志](../artifacts/cloud-deploy-20261013.txt)。
+- 设置 MUSIC_BACKEND_URL 与私有 MUSIC_DEVICE_TOKEN 后，
+  `node --tls-max-v1.2 --import tsx scripts/verify-cloud.mjs` →
+  [真实云端验收日志](../artifacts/cloud-verification-20261013.txt)、
+  [逐项结果/时间/音频哈希](../artifacts/cloud/verification.json)、
+  [输入来源](../artifacts/cloud/inputs/provenance.json)。全部配对 JSON/WAV 在 artifacts/cloud/results。
+  TLS 1.2 选项用于本机 Node 的握手兼容，保留服务器证书校验；没有禁用 TLS 验证。
 
 - `pwsh -NoProfile -File scripts/verify-stage8.ps1` →
   [完整本地回归](../artifacts/final-review-regression-local-20261013.txt)。
@@ -60,7 +82,7 @@
 - 本地带认证 Worker → API 客户端 → C 模拟器（成功/缺令牌/非法音频）→
   [API 客户端集成](../artifacts/final-review-api-client-20261013.txt)。
 - `node node_modules/wrangler/bin/wrangler.js deploy --dry-run --config backend/wrangler.production.jsonc --outdir build/worker-production` →
-  [生产配置打包](../artifacts/final-review-production-dry-run-20261013.txt)。
+  [生产配置历史打包](../artifacts/final-review-production-dry-run-20261013.txt)。dry-run 早于正式部署，不能单独作为上线证据。
 
 本机干净 IDF 构建实际使用以下命令；只适用于本机已有安装。其他电脑应使用自己的 ESP-IDF 5.3.5 环境。
 
@@ -83,9 +105,9 @@ $env:PATH="$env:IDF_PYTHON_ENV_PATH\Scripts;$env:PATH"
 
 ## 仍需补齐的部分
 
-1. **真实 ASR / LLM / 云端 BLOCKED**：默认本地配置没有 AI binding，音频路由返回 503/ASR_UNAVAILABLE。
-   新配置只完成打包。还需本人账号部署、真实中文语音上传、核对 transcript 与 Music JSON，并验证认证和公网 C 渲染。
-   缺少开发板不是这些项目未完成的原因。具体步骤见 START_HERE.md。
+1. **真人语音完整测试 BLOCKED**：真实 ASR/LLM 和公网链路已通过上述 TTS 样本验收，
+   真人麦克风三组完整验证尚未完成，不能将 TTS 结果当作真人识别准确率评估。
+   默认本地配置无 AI binding 时仍返回 503/ASR_UNAVAILABLE；这不代表生产服务未配置。
 2. **ESP32 实机 BLOCKED**：没有开发板、I2S 麦克风、功放和扬声器，无法验证实际采样、
    引脚、位对齐、Wi-Fi/TLS 运行、DMA 连续性、最坏多声部算力、运行时堆/栈和真实声音。
    电脑 WAV、fake I2S、可烧录格式的 bin 都不能替代这些物理测量。
@@ -97,3 +119,5 @@ $env:PATH="$env:IDF_PYTHON_ENV_PATH\Scripts;$env:PATH"
 统一当前文档与历史状态，补 Windows 演示入口、独立生产配置、支持文本/WAV 的 API 客户端、
 白名单打包脚本与 GitHub 提交说明。KS 算法、原规则与测试断言没有改变，也未伪造真实识别或硬件结果。
 提交包排除缓存与凭据；重新打包会包含当前工作区中的最新源码，不依赖它们是否已被 Git 跟踪。
+本次同步正式云端部署及真实调用证据，补入复现脚本、TTS 来源、输入音频、12 组返回 JSON/WAV；
+私人录音、访问令牌和 OAuth 配置仍不公开。GitHub 初次推送早于云端验收，此次更新修正这一状态差异。

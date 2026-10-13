@@ -23,8 +23,21 @@ foreach ($name in @('backend/README.md', 'backend/wrangler.jsonc', 'backend/wran
     'artifacts/final-review-regression-local-20261013.txt',
     'artifacts/final-review-probes-20261013.txt', 'artifacts/final-review-idf-version-20261013.txt',
     'artifacts/final-review-idf-build-20261013.txt', 'artifacts/final-review-demo-20261013.txt',
-    'artifacts/final-review-api-client-20261013.txt', 'artifacts/final-review-production-dry-run-20261013.txt')) {
+    'artifacts/final-review-api-client-20261013.txt', 'artifacts/final-review-production-dry-run-20261013.txt',
+    'artifacts/cloud-deploy-20261013.txt', 'artifacts/cloud-verification-20261013.txt',
+    'artifacts/cloud/README.md', 'artifacts/cloud/verification.json', 'artifacts/cloud/inputs/provenance.json')) {
     $paths.Add($name)
+}
+# Known, non-personal TTS inputs and their 12 verified JSON/WAV output pairs only.
+foreach ($profile in @('warm', 'sad', 'rock')) {
+    $paths.Add("artifacts/cloud/inputs/tts-$profile.wav")
+    foreach ($kind in @('text', 'audio')) {
+        foreach ($mode in @('rules', 'ai')) {
+            foreach ($extension in @('json', 'wav')) {
+                $paths.Add("artifacts/cloud/results/$kind-$mode-$profile.$extension")
+            }
+        }
+    }
 }
 $out = Join-Path $root 'out'
 $null = New-Item -ItemType Directory -Path $out -Force

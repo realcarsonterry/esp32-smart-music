@@ -1,0 +1,1219 @@
+{
+  "ok": true,
+  "protocol_version": "1.0",
+  "request_id": "cloud-1791892909874-17",
+  "mode": "rules",
+  "seed": 1792993304,
+  "bpm": 120,
+  "time_signature": {
+    "numerator": 4,
+    "denominator": 4
+  },
+  "ppq": 480,
+  "bars": 4,
+  "key": {
+    "root": "E",
+    "mode": "minor"
+  },
+  "chords": [
+    {
+      "start_tick": 0,
+      "duration_tick": 1920,
+      "symbol": "Em",
+      "midi_notes": [
+        40,
+        47,
+        52,
+        59
+      ]
+    },
+    {
+      "start_tick": 1920,
+      "duration_tick": 1920,
+      "symbol": "D",
+      "midi_notes": [
+        42,
+        45,
+        50,
+        54
+      ]
+    },
+    {
+      "start_tick": 3840,
+      "duration_tick": 1920,
+      "symbol": "C",
+      "midi_notes": [
+        48,
+        52,
+        55,
+        60
+      ]
+    },
+    {
+      "start_tick": 5760,
+      "duration_tick": 1920,
+      "symbol": "D",
+      "midi_notes": [
+        42,
+        45,
+        50,
+        54
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "a0",
+      "part": "accompaniment",
+      "midi": 40,
+      "velocity": 112,
+      "start_tick": 0,
+      "duration_tick": 200
+    },
+    {
+      "id": "a1",
+      "part": "accompaniment",
+      "midi": 47,
+      "velocity": 112,
+      "start_tick": 10,
+      "duration_tick": 200
+    },
+    {
+      "id": "a2",
+      "part": "accompaniment",
+      "midi": 52,
+      "velocity": 112,
+      "start_tick": 20,
+      "duration_tick": 200
+    },
+    {
+      "id": "a3",
+      "part": "accompaniment",
+      "midi": 59,
+      "velocity": 112,
+      "start_tick": 30,
+      "duration_tick": 200
+    },
+    {
+      "id": "a4",
+      "part": "accompaniment",
+      "midi": 40,
+      "velocity": 112,
+      "start_tick": 240,
+      "duration_tick": 200
+    },
+    {
+      "id": "a5",
+      "part": "accompaniment",
+      "midi": 47,
+      "velocity": 112,
+      "start_tick": 250,
+      "duration_tick": 200
+    },
+    {
+      "id": "a6",
+      "part": "accompaniment",
+      "midi": 52,
+      "velocity": 112,
+      "start_tick": 260,
+      "duration_tick": 200
+    },
+    {
+      "id": "a7",
+      "part": "accompaniment",
+      "midi": 59,
+      "velocity": 112,
+      "start_tick": 270,
+      "duration_tick": 200
+    },
+    {
+      "id": "a8",
+      "part": "accompaniment",
+      "midi": 40,
+      "velocity": 112,
+      "start_tick": 480,
+      "duration_tick": 200
+    },
+    {
+      "id": "a9",
+      "part": "accompaniment",
+      "midi": 47,
+      "velocity": 112,
+      "start_tick": 490,
+      "duration_tick": 200
+    },
+    {
+      "id": "a10",
+      "part": "accompaniment",
+      "midi": 52,
+      "velocity": 112,
+      "start_tick": 500,
+      "duration_tick": 200
+    },
+    {
+      "id": "a11",
+      "part": "accompaniment",
+      "midi": 59,
+      "velocity": 112,
+      "start_tick": 510,
+      "duration_tick": 200
+    },
+    {
+      "id": "a12",
+      "part": "accompaniment",
+      "midi": 40,
+      "velocity": 112,
+      "start_tick": 720,
+      "duration_tick": 200
+    },
+    {
+      "id": "a13",
+      "part": "accompaniment",
+      "midi": 47,
+      "velocity": 112,
+      "start_tick": 730,
+      "duration_tick": 200
+    },
+    {
+      "id": "a14",
+      "part": "accompaniment",
+      "midi": 52,
+      "velocity": 112,
+      "start_tick": 740,
+      "duration_tick": 200
+    },
+    {
+      "id": "a15",
+      "part": "accompaniment",
+      "midi": 59,
+      "velocity": 112,
+      "start_tick": 750,
+      "duration_tick": 200
+    },
+    {
+      "id": "a16",
+      "part": "accompaniment",
+      "midi": 40,
+      "velocity": 112,
+      "start_tick": 960,
+      "duration_tick": 200
+    },
+    {
+      "id": "a17",
+      "part": "accompaniment",
+      "midi": 47,
+      "velocity": 112,
+      "start_tick": 970,
+      "duration_tick": 200
+    },
+    {
+      "id": "a18",
+      "part": "accompaniment",
+      "midi": 52,
+      "velocity": 112,
+      "start_tick": 980,
+      "duration_tick": 200
+    },
+    {
+      "id": "a19",
+      "part": "accompaniment",
+      "midi": 59,
+      "velocity": 112,
+      "start_tick": 990,
+      "duration_tick": 200
+    },
+    {
+      "id": "a20",
+      "part": "accompaniment",
+      "midi": 40,
+      "velocity": 112,
+      "start_tick": 1200,
+      "duration_tick": 200
+    },
+    {
+      "id": "a21",
+      "part": "accompaniment",
+      "midi": 47,
+      "velocity": 112,
+      "start_tick": 1210,
+      "duration_tick": 200
+    },
+    {
+      "id": "a22",
+      "part": "accompaniment",
+      "midi": 52,
+      "velocity": 112,
+      "start_tick": 1220,
+      "duration_tick": 200
+    },
+    {
+      "id": "a23",
+      "part": "accompaniment",
+      "midi": 59,
+      "velocity": 112,
+      "start_tick": 1230,
+      "duration_tick": 200
+    },
+    {
+      "id": "a24",
+      "part": "accompaniment",
+      "midi": 40,
+      "velocity": 112,
+      "start_tick": 1440,
+      "duration_tick": 200
+    },
+    {
+      "id": "a25",
+      "part": "accompaniment",
+      "midi": 47,
+      "velocity": 112,
+      "start_tick": 1450,
+      "duration_tick": 200
+    },
+    {
+      "id": "a26",
+      "part": "accompaniment",
+      "midi": 52,
+      "velocity": 112,
+      "start_tick": 1460,
+      "duration_tick": 200
+    },
+    {
+      "id": "a27",
+      "part": "accompaniment",
+      "midi": 59,
+      "velocity": 112,
+      "start_tick": 1470,
+      "duration_tick": 200
+    },
+    {
+      "id": "a28",
+      "part": "accompaniment",
+      "midi": 40,
+      "velocity": 112,
+      "start_tick": 1680,
+      "duration_tick": 200
+    },
+    {
+      "id": "a29",
+      "part": "accompaniment",
+      "midi": 47,
+      "velocity": 112,
+      "start_tick": 1690,
+      "duration_tick": 200
+    },
+    {
+      "id": "a30",
+      "part": "accompaniment",
+      "midi": 52,
+      "velocity": 112,
+      "start_tick": 1700,
+      "duration_tick": 200
+    },
+    {
+      "id": "a31",
+      "part": "accompaniment",
+      "midi": 59,
+      "velocity": 112,
+      "start_tick": 1710,
+      "duration_tick": 200
+    },
+    {
+      "id": "a32",
+      "part": "accompaniment",
+      "midi": 42,
+      "velocity": 112,
+      "start_tick": 1920,
+      "duration_tick": 200
+    },
+    {
+      "id": "a33",
+      "part": "accompaniment",
+      "midi": 45,
+      "velocity": 112,
+      "start_tick": 1930,
+      "duration_tick": 200
+    },
+    {
+      "id": "a34",
+      "part": "accompaniment",
+      "midi": 50,
+      "velocity": 112,
+      "start_tick": 1940,
+      "duration_tick": 200
+    },
+    {
+      "id": "a35",
+      "part": "accompaniment",
+      "midi": 54,
+      "velocity": 112,
+      "start_tick": 1950,
+      "duration_tick": 200
+    },
+    {
+      "id": "a36",
+      "part": "accompaniment",
+      "midi": 42,
+      "velocity": 112,
+      "start_tick": 2160,
+      "duration_tick": 200
+    },
+    {
+      "id": "a37",
+      "part": "accompaniment",
+      "midi": 45,
+      "velocity": 112,
+      "start_tick": 2170,
+      "duration_tick": 200
+    },
+    {
+      "id": "a38",
+      "part": "accompaniment",
+      "midi": 50,
+      "velocity": 112,
+      "start_tick": 2180,
+      "duration_tick": 200
+    },
+    {
+      "id": "a39",
+      "part": "accompaniment",
+      "midi": 54,
+      "velocity": 112,
+      "start_tick": 2190,
+      "duration_tick": 200
+    },
+    {
+      "id": "a40",
+      "part": "accompaniment",
+      "midi": 42,
+      "velocity": 112,
+      "start_tick": 2400,
+      "duration_tick": 200
+    },
+    {
+      "id": "a41",
+      "part": "accompaniment",
+      "midi": 45,
+      "velocity": 112,
+      "start_tick": 2410,
+      "duration_tick": 200
+    },
+    {
+      "id": "a42",
+      "part": "accompaniment",
+      "midi": 50,
+      "velocity": 112,
+      "start_tick": 2420,
+      "duration_tick": 200
+    },
+    {
+      "id": "a43",
+      "part": "accompaniment",
+      "midi": 54,
+      "velocity": 112,
+      "start_tick": 2430,
+      "duration_tick": 200
+    },
+    {
+      "id": "a44",
+      "part": "accompaniment",
+      "midi": 42,
+      "velocity": 112,
+      "start_tick": 2640,
+      "duration_tick": 200
+    },
+    {
+      "id": "a45",
+      "part": "accompaniment",
+      "midi": 45,
+      "velocity": 112,
+      "start_tick": 2650,
+      "duration_tick": 200
+    },
+    {
+      "id": "a46",
+      "part": "accompaniment",
+      "midi": 50,
+      "velocity": 112,
+      "start_tick": 2660,
+      "duration_tick": 200
+    },
+    {
+      "id": "a47",
+      "part": "accompaniment",
+      "midi": 54,
+      "velocity": 112,
+      "start_tick": 2670,
+      "duration_tick": 200
+    },
+    {
+      "id": "a48",
+      "part": "accompaniment",
+      "midi": 42,
+      "velocity": 112,
+      "start_tick": 2880,
+      "duration_tick": 200
+    },
+    {
+      "id": "a49",
+      "part": "accompaniment",
+      "midi": 45,
+      "velocity": 112,
+      "start_tick": 2890,
+      "duration_tick": 200
+    },
+    {
+      "id": "a50",
+      "part": "accompaniment",
+      "midi": 50,
+      "velocity": 112,
+      "start_tick": 2900,
+      "duration_tick": 200
+    },
+    {
+      "id": "a51",
+      "part": "accompaniment",
+      "midi": 54,
+      "velocity": 112,
+      "start_tick": 2910,
+      "duration_tick": 200
+    },
+    {
+      "id": "a52",
+      "part": "accompaniment",
+      "midi": 42,
+      "velocity": 112,
+      "start_tick": 3120,
+      "duration_tick": 200
+    },
+    {
+      "id": "a53",
+      "part": "accompaniment",
+      "midi": 45,
+      "velocity": 112,
+      "start_tick": 3130,
+      "duration_tick": 200
+    },
+    {
+      "id": "a54",
+      "part": "accompaniment",
+      "midi": 50,
+      "velocity": 112,
+      "start_tick": 3140,
+      "duration_tick": 200
+    },
+    {
+      "id": "a55",
+      "part": "accompaniment",
+      "midi": 54,
+      "velocity": 112,
+      "start_tick": 3150,
+      "duration_tick": 200
+    },
+    {
+      "id": "a56",
+      "part": "accompaniment",
+      "midi": 42,
+      "velocity": 112,
+      "start_tick": 3360,
+      "duration_tick": 200
+    },
+    {
+      "id": "a57",
+      "part": "accompaniment",
+      "midi": 45,
+      "velocity": 112,
+      "start_tick": 3370,
+      "duration_tick": 200
+    },
+    {
+      "id": "a58",
+      "part": "accompaniment",
+      "midi": 50,
+      "velocity": 112,
+      "start_tick": 3380,
+      "duration_tick": 200
+    },
+    {
+      "id": "a59",
+      "part": "accompaniment",
+      "midi": 54,
+      "velocity": 112,
+      "start_tick": 3390,
+      "duration_tick": 200
+    },
+    {
+      "id": "a60",
+      "part": "accompaniment",
+      "midi": 42,
+      "velocity": 112,
+      "start_tick": 3600,
+      "duration_tick": 200
+    },
+    {
+      "id": "a61",
+      "part": "accompaniment",
+      "midi": 45,
+      "velocity": 112,
+      "start_tick": 3610,
+      "duration_tick": 200
+    },
+    {
+      "id": "a62",
+      "part": "accompaniment",
+      "midi": 50,
+      "velocity": 112,
+      "start_tick": 3620,
+      "duration_tick": 200
+    },
+    {
+      "id": "a63",
+      "part": "accompaniment",
+      "midi": 54,
+      "velocity": 112,
+      "start_tick": 3630,
+      "duration_tick": 200
+    },
+    {
+      "id": "a64",
+      "part": "accompaniment",
+      "midi": 48,
+      "velocity": 112,
+      "start_tick": 3840,
+      "duration_tick": 200
+    },
+    {
+      "id": "a65",
+      "part": "accompaniment",
+      "midi": 52,
+      "velocity": 112,
+      "start_tick": 3850,
+      "duration_tick": 200
+    },
+    {
+      "id": "a66",
+      "part": "accompaniment",
+      "midi": 55,
+      "velocity": 112,
+      "start_tick": 3860,
+      "duration_tick": 200
+    },
+    {
+      "id": "a67",
+      "part": "accompaniment",
+      "midi": 60,
+      "velocity": 112,
+      "start_tick": 3870,
+      "duration_tick": 200
+    },
+    {
+      "id": "a68",
+      "part": "accompaniment",
+      "midi": 48,
+      "velocity": 112,
+      "start_tick": 4080,
+      "duration_tick": 200
+    },
+    {
+      "id": "a69",
+      "part": "accompaniment",
+      "midi": 52,
+      "velocity": 112,
+      "start_tick": 4090,
+      "duration_tick": 200
+    },
+    {
+      "id": "a70",
+      "part": "accompaniment",
+      "midi": 55,
+      "velocity": 112,
+      "start_tick": 4100,
+      "duration_tick": 200
+    },
+    {
+      "id": "a71",
+      "part": "accompaniment",
+      "midi": 60,
+      "velocity": 112,
+      "start_tick": 4110,
+      "duration_tick": 200
+    },
+    {
+      "id": "a72",
+      "part": "accompaniment",
+      "midi": 48,
+      "velocity": 112,
+      "start_tick": 4320,
+      "duration_tick": 200
+    },
+    {
+      "id": "a73",
+      "part": "accompaniment",
+      "midi": 52,
+      "velocity": 112,
+      "start_tick": 4330,
+      "duration_tick": 200
+    },
+    {
+      "id": "a74",
+      "part": "accompaniment",
+      "midi": 55,
+      "velocity": 112,
+      "start_tick": 4340,
+      "duration_tick": 200
+    },
+    {
+      "id": "a75",
+      "part": "accompaniment",
+      "midi": 60,
+      "velocity": 112,
+      "start_tick": 4350,
+      "duration_tick": 200
+    },
+    {
+      "id": "a76",
+      "part": "accompaniment",
+      "midi": 48,
+      "velocity": 112,
+      "start_tick": 4560,
+      "duration_tick": 200
+    },
+    {
+      "id": "a77",
+      "part": "accompaniment",
+      "midi": 52,
+      "velocity": 112,
+      "start_tick": 4570,
+      "duration_tick": 200
+    },
+    {
+      "id": "a78",
+      "part": "accompaniment",
+      "midi": 55,
+      "velocity": 112,
+      "start_tick": 4580,
+      "duration_tick": 200
+    },
+    {
+      "id": "a79",
+      "part": "accompaniment",
+      "midi": 60,
+      "velocity": 112,
+      "start_tick": 4590,
+      "duration_tick": 200
+    },
+    {
+      "id": "a80",
+      "part": "accompaniment",
+      "midi": 48,
+      "velocity": 112,
+      "start_tick": 4800,
+      "duration_tick": 200
+    },
+    {
+      "id": "a81",
+      "part": "accompaniment",
+      "midi": 52,
+      "velocity": 112,
+      "start_tick": 4810,
+      "duration_tick": 200
+    },
+    {
+      "id": "a82",
+      "part": "accompaniment",
+      "midi": 55,
+      "velocity": 112,
+      "start_tick": 4820,
+      "duration_tick": 200
+    },
+    {
+      "id": "a83",
+      "part": "accompaniment",
+      "midi": 60,
+      "velocity": 112,
+      "start_tick": 4830,
+      "duration_tick": 200
+    },
+    {
+      "id": "a84",
+      "part": "accompaniment",
+      "midi": 48,
+      "velocity": 112,
+      "start_tick": 5040,
+      "duration_tick": 200
+    },
+    {
+      "id": "a85",
+      "part": "accompaniment",
+      "midi": 52,
+      "velocity": 112,
+      "start_tick": 5050,
+      "duration_tick": 200
+    },
+    {
+      "id": "a86",
+      "part": "accompaniment",
+      "midi": 55,
+      "velocity": 112,
+      "start_tick": 5060,
+      "duration_tick": 200
+    },
+    {
+      "id": "a87",
+      "part": "accompaniment",
+      "midi": 60,
+      "velocity": 112,
+      "start_tick": 5070,
+      "duration_tick": 200
+    },
+    {
+      "id": "a88",
+      "part": "accompaniment",
+      "midi": 48,
+      "velocity": 112,
+      "start_tick": 5280,
+      "duration_tick": 200
+    },
+    {
+      "id": "a89",
+      "part": "accompaniment",
+      "midi": 52,
+      "velocity": 112,
+      "start_tick": 5290,
+      "duration_tick": 200
+    },
+    {
+      "id": "a90",
+      "part": "accompaniment",
+      "midi": 55,
+      "velocity": 112,
+      "start_tick": 5300,
+      "duration_tick": 200
+    },
+    {
+      "id": "a91",
+      "part": "accompaniment",
+      "midi": 60,
+      "velocity": 112,
+      "start_tick": 5310,
+      "duration_tick": 200
+    },
+    {
+      "id": "a92",
+      "part": "accompaniment",
+      "midi": 48,
+      "velocity": 112,
+      "start_tick": 5520,
+      "duration_tick": 200
+    },
+    {
+      "id": "a93",
+      "part": "accompaniment",
+      "midi": 52,
+      "velocity": 112,
+      "start_tick": 5530,
+      "duration_tick": 200
+    },
+    {
+      "id": "a94",
+      "part": "accompaniment",
+      "midi": 55,
+      "velocity": 112,
+      "start_tick": 5540,
+      "duration_tick": 200
+    },
+    {
+      "id": "a95",
+      "part": "accompaniment",
+      "midi": 60,
+      "velocity": 112,
+      "start_tick": 5550,
+      "duration_tick": 200
+    },
+    {
+      "id": "a96",
+      "part": "accompaniment",
+      "midi": 42,
+      "velocity": 112,
+      "start_tick": 5760,
+      "duration_tick": 200
+    },
+    {
+      "id": "a97",
+      "part": "accompaniment",
+      "midi": 45,
+      "velocity": 112,
+      "start_tick": 5770,
+      "duration_tick": 200
+    },
+    {
+      "id": "a98",
+      "part": "accompaniment",
+      "midi": 50,
+      "velocity": 112,
+      "start_tick": 5780,
+      "duration_tick": 200
+    },
+    {
+      "id": "a99",
+      "part": "accompaniment",
+      "midi": 54,
+      "velocity": 112,
+      "start_tick": 5790,
+      "duration_tick": 200
+    },
+    {
+      "id": "a100",
+      "part": "accompaniment",
+      "midi": 42,
+      "velocity": 112,
+      "start_tick": 6000,
+      "duration_tick": 200
+    },
+    {
+      "id": "a101",
+      "part": "accompaniment",
+      "midi": 45,
+      "velocity": 112,
+      "start_tick": 6010,
+      "duration_tick": 200
+    },
+    {
+      "id": "a102",
+      "part": "accompaniment",
+      "midi": 50,
+      "velocity": 112,
+      "start_tick": 6020,
+      "duration_tick": 200
+    },
+    {
+      "id": "a103",
+      "part": "accompaniment",
+      "midi": 54,
+      "velocity": 112,
+      "start_tick": 6030,
+      "duration_tick": 200
+    },
+    {
+      "id": "a104",
+      "part": "accompaniment",
+      "midi": 42,
+      "velocity": 112,
+      "start_tick": 6240,
+      "duration_tick": 200
+    },
+    {
+      "id": "a105",
+      "part": "accompaniment",
+      "midi": 45,
+      "velocity": 112,
+      "start_tick": 6250,
+      "duration_tick": 200
+    },
+    {
+      "id": "a106",
+      "part": "accompaniment",
+      "midi": 50,
+      "velocity": 112,
+      "start_tick": 6260,
+      "duration_tick": 200
+    },
+    {
+      "id": "a107",
+      "part": "accompaniment",
+      "midi": 54,
+      "velocity": 112,
+      "start_tick": 6270,
+      "duration_tick": 200
+    },
+    {
+      "id": "a108",
+      "part": "accompaniment",
+      "midi": 42,
+      "velocity": 112,
+      "start_tick": 6480,
+      "duration_tick": 200
+    },
+    {
+      "id": "a109",
+      "part": "accompaniment",
+      "midi": 45,
+      "velocity": 112,
+      "start_tick": 6490,
+      "duration_tick": 200
+    },
+    {
+      "id": "a110",
+      "part": "accompaniment",
+      "midi": 50,
+      "velocity": 112,
+      "start_tick": 6500,
+      "duration_tick": 200
+    },
+    {
+      "id": "a111",
+      "part": "accompaniment",
+      "midi": 54,
+      "velocity": 112,
+      "start_tick": 6510,
+      "duration_tick": 200
+    },
+    {
+      "id": "a112",
+      "part": "accompaniment",
+      "midi": 42,
+      "velocity": 112,
+      "start_tick": 6720,
+      "duration_tick": 200
+    },
+    {
+      "id": "a113",
+      "part": "accompaniment",
+      "midi": 45,
+      "velocity": 112,
+      "start_tick": 6730,
+      "duration_tick": 200
+    },
+    {
+      "id": "a114",
+      "part": "accompaniment",
+      "midi": 50,
+      "velocity": 112,
+      "start_tick": 6740,
+      "duration_tick": 200
+    },
+    {
+      "id": "a115",
+      "part": "accompaniment",
+      "midi": 54,
+      "velocity": 112,
+      "start_tick": 6750,
+      "duration_tick": 200
+    },
+    {
+      "id": "a116",
+      "part": "accompaniment",
+      "midi": 42,
+      "velocity": 112,
+      "start_tick": 6960,
+      "duration_tick": 200
+    },
+    {
+      "id": "a117",
+      "part": "accompaniment",
+      "midi": 45,
+      "velocity": 112,
+      "start_tick": 6970,
+      "duration_tick": 200
+    },
+    {
+      "id": "a118",
+      "part": "accompaniment",
+      "midi": 50,
+      "velocity": 112,
+      "start_tick": 6980,
+      "duration_tick": 200
+    },
+    {
+      "id": "a119",
+      "part": "accompaniment",
+      "midi": 54,
+      "velocity": 112,
+      "start_tick": 6990,
+      "duration_tick": 200
+    },
+    {
+      "id": "a120",
+      "part": "accompaniment",
+      "midi": 42,
+      "velocity": 112,
+      "start_tick": 7200,
+      "duration_tick": 200
+    },
+    {
+      "id": "a121",
+      "part": "accompaniment",
+      "midi": 45,
+      "velocity": 112,
+      "start_tick": 7210,
+      "duration_tick": 200
+    },
+    {
+      "id": "a122",
+      "part": "accompaniment",
+      "midi": 50,
+      "velocity": 112,
+      "start_tick": 7220,
+      "duration_tick": 200
+    },
+    {
+      "id": "a123",
+      "part": "accompaniment",
+      "midi": 54,
+      "velocity": 112,
+      "start_tick": 7230,
+      "duration_tick": 200
+    },
+    {
+      "id": "a124",
+      "part": "accompaniment",
+      "midi": 42,
+      "velocity": 112,
+      "start_tick": 7440,
+      "duration_tick": 200
+    },
+    {
+      "id": "a125",
+      "part": "accompaniment",
+      "midi": 45,
+      "velocity": 112,
+      "start_tick": 7450,
+      "duration_tick": 200
+    },
+    {
+      "id": "a126",
+      "part": "accompaniment",
+      "midi": 50,
+      "velocity": 112,
+      "start_tick": 7460,
+      "duration_tick": 200
+    },
+    {
+      "id": "a127",
+      "part": "accompaniment",
+      "midi": 54,
+      "velocity": 112,
+      "start_tick": 7470,
+      "duration_tick": 200
+    },
+    {
+      "id": "m0",
+      "part": "melody",
+      "midi": 71,
+      "velocity": 88,
+      "start_tick": 0,
+      "duration_tick": 360
+    },
+    {
+      "id": "m1",
+      "part": "melody",
+      "midi": 64,
+      "velocity": 88,
+      "start_tick": 480,
+      "duration_tick": 360
+    },
+    {
+      "id": "m2",
+      "part": "melody",
+      "midi": 76,
+      "velocity": 88,
+      "start_tick": 960,
+      "duration_tick": 360
+    },
+    {
+      "id": "m3",
+      "part": "melody",
+      "midi": 71,
+      "velocity": 88,
+      "start_tick": 1440,
+      "duration_tick": 360
+    },
+    {
+      "id": "m4",
+      "part": "melody",
+      "midi": 69,
+      "velocity": 88,
+      "start_tick": 1920,
+      "duration_tick": 360
+    },
+    {
+      "id": "m5",
+      "part": "melody",
+      "midi": 74,
+      "velocity": 88,
+      "start_tick": 2400,
+      "duration_tick": 360
+    },
+    {
+      "id": "m6",
+      "part": "melody",
+      "midi": 74,
+      "velocity": 88,
+      "start_tick": 2880,
+      "duration_tick": 360
+    },
+    {
+      "id": "m7",
+      "part": "melody",
+      "midi": 66,
+      "velocity": 88,
+      "start_tick": 3360,
+      "duration_tick": 360
+    },
+    {
+      "id": "m8",
+      "part": "melody",
+      "midi": 72,
+      "velocity": 88,
+      "start_tick": 3840,
+      "duration_tick": 360
+    },
+    {
+      "id": "m9",
+      "part": "melody",
+      "midi": 67,
+      "velocity": 88,
+      "start_tick": 4320,
+      "duration_tick": 360
+    },
+    {
+      "id": "m10",
+      "part": "melody",
+      "midi": 76,
+      "velocity": 88,
+      "start_tick": 4800,
+      "duration_tick": 360
+    },
+    {
+      "id": "m11",
+      "part": "melody",
+      "midi": 67,
+      "velocity": 88,
+      "start_tick": 5280,
+      "duration_tick": 360
+    },
+    {
+      "id": "m12",
+      "part": "melody",
+      "midi": 74,
+      "velocity": 88,
+      "start_tick": 5760,
+      "duration_tick": 360
+    },
+    {
+      "id": "m13",
+      "part": "melody",
+      "midi": 66,
+      "velocity": 88,
+      "start_tick": 6240,
+      "duration_tick": 360
+    },
+    {
+      "id": "m14",
+      "part": "melody",
+      "midi": 66,
+      "velocity": 88,
+      "start_tick": 6720,
+      "duration_tick": 360
+    },
+    {
+      "id": "m15",
+      "part": "melody",
+      "midi": 69,
+      "velocity": 88,
+      "start_tick": 7200,
+      "duration_tick": 360
+    }
+  ],
+  "transcript": "摇滚 120 BPM"
+}

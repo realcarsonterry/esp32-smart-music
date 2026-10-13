@@ -1,6 +1,7 @@
 # ASR 离线验收（2026-10-13，Asia/Singapore）
 
-> 本文记录 ASR 阶段证据。后续已完成 IDF 平台构建；完整当前状态见 [最终软件审查](final-review-20261013.md)。
+> 本文保留离线阶段历史证据。后续 IDF 构建和真实云端 ASR/LLM（中文 TTS 输入）均已完成；
+> 下文的 BLOCKED/未部署是当时状态，当前状态见 [最终软件审查](final-review-20261013.md)。
 
 状态：ASR 代码与离线测试 PASS；真实语音 / Workers AI 调用 BLOCKED。
 根目录：含 SPEC.md 的 C:/Users/Terry/Desktop/context。

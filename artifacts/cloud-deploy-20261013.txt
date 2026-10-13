@@ -1,0 +1,22 @@
+
+ ⛅️ wrangler 4.149.0 (update available 4.150.0)
+───────────────────────────────────────────────
+▲ [WARNING] You need to register a workers.dev subdomain before publishing to workers.dev
+
+
+Success! It may take a few minutes for DNS records to update.
+Visit https://dash.cloudflare.com/5c2ed1f034f2fa4d4c8ff71b2e7ca315/workers/subdomain to edit your workers.dev subdomain
+Total Upload: 344.65 KiB / gzip: 66.79 KiB
+Worker Startup Time: 78 ms
+Your Worker has access to the following bindings:
+Binding                      Resource                  
+env.AI                       AI                        
+env.ALLOW_DEPLOY ("1")       Environment Variable      
+env.ALLOW_MOCK ("0")         Environment Variable      
+env.AUTH_REQUIRED ("1")      Environment Variable      
+
+Uploaded esp32-smart-music-api (2.50 sec)
+Deployed esp32-smart-music-api triggers (0.82 sec)
+  https://esp32-smart-music-api.esp32-smart-music-backend.workers.dev
+Current Version ID: 925721b1-5edf-4993-8875-ada3d1afe54e
+Exit code: 0

@@ -61,10 +61,11 @@ review-probes 用假客户端串起音频请求与真实 C 模拟器，带/不�
 通过沙盒外执行权限重跑相同 --local 测试；最终结果以本次重跑输出为准。
 不删除失败用例、不放宽断言。内部预期错误退出 2/4/5 与测试入口失败区分记录。
 
-## 仍未验证
+## 云端与剩余验证
 
-AI 真实调用 BLOCKED：阶段 8 禁止，凭据仅检查存在性，不输出值。
-本地配置没有 AI 绑定；ASR 适配已实现，真实语音与模型调用仍为 BLOCKED。
+生产 Cloudflare API、真实 LLM 与真实 ASR（中文 Windows TTS 输入）PASS：6 项协议/认证检查、12 个音乐请求。
+每个成功结果均由共享 C KS 渲染并检查 PCM 格式/长度/非静音；证据见 ../artifacts/cloud/verification.json。
+本地配置没有 AI 绑定，离线回归继续使用假客户端；scripts/verify-cloud.mjs 是明确调用模型的独立入口。
 固件平台构建 PASS：本次使用已有 ESP-IDF 5.3.5 在全新目录完成 build/size/size-components，未烧录。
-真实硬件与云端部署 BLOCKED：本阶段不连接/录音/烧录，不登录/部署/push。
-可选阶段 9 如另获授权，真实调用还须同时具有账户 ID 与 API Token。
+真人语音完整测试和真实硬件仍为 BLOCKED；TTS 验收不能替代真人录音准确率或 ESP32 实机验收。
+凭据不公开，云端模型复现需项目拥有者提供 DEVICE_TOKEN。

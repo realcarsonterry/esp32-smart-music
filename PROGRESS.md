@@ -1,6 +1,8 @@
 # PROGRESS
 
 ## 当前阶段
+Cloudflare 生产 API 已部署，真实 LLM 与 ASR（中文 TTS 样本）验收 PASS：6 项接口检查、12 个音乐请求，全部通过共享 C KS 渲染。
+线上地址：https://esp32-smart-music-api.esp32-smart-music-backend.workers.dev 。证据见 artifacts/cloud/verification.json。
 阶段 8 本地验收已完成：文本规则、KS、真正本地 Worker HTTP → Music JSON → 同一 C KS 引擎 → WAV — PASS。
 阶段 7 固件源码、宿主测试与 ESP-IDF 5.3.5 的 ESP32-S3 干净构建已完成，硬件验收仍为 BLOCKED。
 当前提交状态、最新命令与证据见 docs/final-review-20261013.md；提交步骤见 START_HERE.md。
@@ -15,15 +17,15 @@
 - 完成 uint64 采样位置换算、独立状态的 xorshift32、float 到 PCM16 转换和单声道 32000 Hz / 16-bit little-endian WAV 写出。
 - CTest 20 项、后端规则与 AI 假客户端测试、固件宿主 2 项，以及本地 HTTP 集成测试已通过；历史命令见后续阶段记录。
 - 阶段 7 固件控制/录音/传输/播放源码及 fake I2S/HTTP 宿主边界测试已实现。
-- 阶段 8 AI 意图适配代码、协议/架构/测试文档和总回归入口已完成；模型仅用假客户端。
-- 多语言 ASR 适配、音频 rules/ai 流程及 transcript 的 schema/C 兼容已实现；仅离线验证。
+- 阶段 8 AI 意图适配和多语言 ASR 适配已实现；离线回归使用假客户端，后续生产服务已完成真实模型调用。
+- 音频 rules/ai 流程及 transcript 的 schema/C 兼容已实现，中文 TTS 输入经云端 ASR 后可由共享 C KS 渲染。
 
 ## 未完成
-- 真实语音识别仍为 BLOCKED；无绑定时音频接口返回 ASR_UNAVAILABLE。
-- 云端和真实模型调用、硬件录放音/实时性/运行时内存与音质尚未验证。
+- 真人语音完整测试尚未完成；真实 ASR 服务的中文 TTS 样本验收已通过。
+- ESP32 硬件录放音/实时性/运行时内存与音质尚未验证。
 
 ## 阻塞
-- ESP-IDF 5.3.5 已在本机安装且本次完成平台编译；硬件未连接，云端与真实模型没有验收证据。
+- ESP-IDF 5.3.5 平台编译已通过，云端与真实模型已有验收证据；当前缺少开发板及音频外设。
 - 后续为历史阶段记录，工具绝对路径仅记录当时环境，不是新机器的安装或 PATH 要求。
 
 ## 阶段 2 验收：C 校验与时间 — PASS

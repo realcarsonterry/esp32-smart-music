@@ -1,0 +1,21 @@
+{
+    "bits_per_sample":  16,
+    "cases":  [
+                  {
+                      "text":  "温暖轻快的吉他伴奏",
+                      "name":  "warm"
+                  },
+                  {
+                      "text":  "悲伤慢的吉他伴奏",
+                      "name":  "sad"
+                  },
+                  {
+                      "text":  "摇滚，一百二十 BPM",
+                      "name":  "rock"
+                  }
+              ],
+    "source":  "Windows System.Speech TTS, not a human or ESP32 recording",
+    "sample_rate":  16000,
+    "channels":  1,
+    "voice":  "Microsoft Huihui Desktop"
+}

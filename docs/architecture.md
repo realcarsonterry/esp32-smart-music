@@ -1,6 +1,7 @@
 # 架构（阶段 8）
 
-SPEC.md 是唯一契约。阶段 8 包含文本 AI 意图适配和音频 ASR 适配，模型仅离线假测。
+SPEC.md 是协议契约。阶段 8 的离线适配后，生产服务已部署，真实 LLM/ASR（中文 TTS）已完成验收。
+当前状态见 [最终审查](final-review-20261013.md)，真实请求记录见 [云端结果](../artifacts/cloud/verification.json)。
 
 ## 数据流与职责
 
@@ -44,8 +45,8 @@ ASR 已实现：WAV 校验通过后，一次 env.AI.run 调用多语言 ASR。
 缺绑定 503/ASR_UNAVAILABLE；失败/非法输出 502/ASR_FAILED；空转写 502/EMPTY_TRANSCRIPTION。
 hint 接受但忽略；只有 text 输出能进入生成器。音频 ai 的 LLM 最多一次，无重试/降级。
 成功响应含可选 transcript，schema/C 解析器验证后忽略，合成只依赖原有音乐字段。
-真实模型调用即使存在凭据也留给可选阶段 9，本阶段禁止调用。
-未登录、未部署、未连接硬件；没有 idf.py 时不安装 IDF、不伪造固件产物。
+生产配置 backend/wrangler.production.jsonc 绑定 AI 并强制认证；2026-10-13 已正式部署并通过 12 个真实音乐请求。
+输入语音为 Windows TTS，完整真人测试和 ESP32 硬件仍待验证；本地回归与云端验收分别记录。
 
 ## 官方资料核对（2026-10-13）
 
@@ -64,4 +65,4 @@ Context7 本次仍因 npm DNS ENOTFOUND 不可用；直接读取官方模型页�
 
 请求使用 messages、stream=false、temperature=0、max_tokens=256 和
 response_format={type:json_schema,json_schema:...}。服务端 JSON Mode 不能替代本地校验。
-以上是文档核对与代码适配，不能作为真实模型成功证据。
+文档核对与代码适配不能单独作为真实模型证据；实际成功证据另见 artifacts/cloud/verification.json。

@@ -1,16 +1,26 @@
 # esp32-smart-music
 
-这是 ESP32-S3 智能音乐生成系统的软件原型与固件源码。电脑端通过本地 Cloudflare Worker
+这是 ESP32-S3 智能音乐生成系统的软件原型与固件源码。后端通过 Cloudflare Worker
 生成 BPM、调式、和弦、节奏与基础旋律，再由与固件共享的 C11 Karplus–Strong 引擎输出拨弦音频。
 
-**先读 [提交与现场演示指南](START_HERE.md)**，包含电脑演示命令、发送附件步骤、云端补齐步骤及向面试官说明硬件限制的话术。
+**先读 [提交与现场演示指南](START_HERE.md)**，包含本地与云端演示命令、提交步骤及硬件验证边界。
 最新实际检查见 [最终软件审查](docs/final-review-20261013.md)。
 
 可直接下载 [Music JSON 样例](artifacts/generated_music.json) 和 [KS 合成 WAV 样例](artifacts/generated_music.wav)。
-GitHub 托管的是源码与样例，Cloudflare API 的部署是独立步骤。
+线上 API：**https://esp32-smart-music-api.esp32-smart-music-backend.workers.dev**。
+可免令牌检查 [health](https://esp32-smart-music-api.esp32-smart-music-backend.workers.dev/health)
+和 [info](https://esp32-smart-music-api.esp32-smart-music-backend.workers.dev/api/v1/info)。生成接口需要 bearer 令牌，令牌不在仓库中。
+API 根路径没有网页界面，请使用 START_HERE 中的客户端命令。
 
-已验证：文本 rules、ASR/AI 离线适配、KS、本地 HTTP 到 WAV、ESP-IDF 5.3.5 的 ESP32-S3 干净构建。
-未验证：真实语音识别、真实 LLM、公网部署、ESP32 实际录音/播放与实时性。
+已验证：Cloudflare 正式部署、真实 LLM 意图解析、真实 ASR 服务调用（中文 Windows TTS 样本）、
+云端 Music JSON → 共享 C KS → WAV、本地回归和 ESP-IDF 5.3.5 的 ESP32-S3 干净构建。
+云端验收通过 **6 项接口/认证检查和 12 个音乐请求**，覆盖文本与音频的 rules/ai 模式。
+记录时间为 2026-10-13 20:01（Asia/Singapore）；证据见 [云端日志](artifacts/cloud-verification-20261013.txt)、
+[完整结果与音频哈希](artifacts/cloud/verification.json) 和 [正式部署日志](artifacts/cloud-deploy-20261013.txt)。
+可试听云端结果：[温暖轻快](artifacts/cloud/results/audio-ai-warm.wav)、[悲伤慢](artifacts/cloud/results/audio-ai-sad.wav)、[摇滚 120 BPM](artifacts/cloud/results/audio-ai-rock.wav)。
+
+未验证：真人语音完整测试、ESP32 实际录音/播放、硬件实时性与运行时内存。
+TTS 是真实 ASR 的输入样本，不是真人或 ESP32 麦克风录音；来源见 [provenance](artifacts/cloud/inputs/provenance.json)。
 
 ```powershell
 # 这台电脑已有构建和依赖，可直接运行；会打开 WAV 播放器。
@@ -19,7 +29,7 @@ pwsh -NoProfile -File scripts/demo.ps1
 
 这是 ESP32-S3 智能音乐项目的无硬件原型及固件源码。唯一契约为 [SPEC.md](SPEC.md)。
 中文文本经本地 Worker rules 生成 Music JSON，再由同一份 C11 KS 引擎渲染 WAV。
-ASR/AI 适配仅用假客户端验证；没有登录、真实模型调用、部署或 push。
+本地配置不绑定 AI，离线回归使用假客户端；生产配置绑定真实 Workers AI，云端验收已完成上述范围。
 固件源码有宿主测试，平台构建已通过；真实硬件仍待验证。生成固定 4 小节原创伴奏，不检索或复现指定歌曲。
 
 历史阶段运行结果见 [验收报告](docs/acceptance-report.md)；当前状态以最终软件审查为准。
@@ -66,7 +76,8 @@ seed 691577472，以及 320000 个采样、整体非静音的 mono/32000 Hz/PCM1
 输出为 artifacts/generated_music.json 和 artifacts/generated_music.wav；允许覆盖
 这两个文件。run-simulator 轮询 /health，确认监听进程归属，优先 8787、忙则 8877。
 它只停止自己启动的 Worker，错误退出码为 JSON 2、渲染 3、HTTP 4、环境/端口 5。
-Wrangler 使用实测可用的 --local；仓库未配置 AI 绑定，不会在 HTTP 测试中调用模型。
+本地回归使用 --local 和无 AI 绑定的 backend/wrangler.jsonc，不会调用模型。
+生产服务使用 backend/wrangler.production.jsonc，含 AI 绑定并要求认证。
 
 AI 请求缺少可用绑定返回 503/AI_UNAVAILABLE。假模型的意图最多尝试两次，
 必须严格通过六字段及预设一致性校验，音符始终由原规则生成器产生。

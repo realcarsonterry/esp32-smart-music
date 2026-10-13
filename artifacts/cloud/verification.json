@@ -1,0 +1,495 @@
+{
+  "started_at": "2026-10-13T12:01:25.406Z",
+  "backend_url": "https://esp32-smart-music-api.esp32-smart-music-backend.workers.dev",
+  "scope": "Actual HTTPS and Workers AI; speech fixtures are Windows TTS, not human or ESP32 microphone recordings.",
+  "checks": [
+    {
+      "name": "/health",
+      "http_status": 200,
+      "status": "PASS",
+      "value": {
+        "ok": true,
+        "protocol_version": "1.0"
+      }
+    },
+    {
+      "name": "/api/v1/info",
+      "http_status": 200,
+      "status": "PASS",
+      "value": {
+        "ok": true,
+        "protocol_version": "1.0",
+        "rules_available": true,
+        "ai_configured": true,
+        "auth_required": true,
+        "recording_format": {
+          "container": "WAV",
+          "encoding": "PCM",
+          "sample_rate": 16000,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "max_seconds": 4
+        },
+        "synthesis_format": {
+          "container": "WAV",
+          "encoding": "PCM",
+          "sample_rate": 32000,
+          "channels": 1,
+          "bits_per_sample": 16
+        }
+      }
+    },
+    {
+      "name": "missing-token",
+      "http_status": 401,
+      "error_code": "UNAUTHORIZED",
+      "elapsed_ms": 135,
+      "status": "PASS"
+    },
+    {
+      "name": "wrong-token",
+      "http_status": 401,
+      "error_code": "UNAUTHORIZED",
+      "elapsed_ms": 137,
+      "status": "PASS"
+    },
+    {
+      "name": "invalid-audio",
+      "http_status": 400,
+      "error_code": "INVALID_AUDIO",
+      "elapsed_ms": 127,
+      "status": "PASS"
+    },
+    {
+      "name": "oversize-request",
+      "http_status": 413,
+      "error_code": "REQUEST_TOO_LARGE",
+      "elapsed_ms": 557,
+      "status": "PASS"
+    }
+  ],
+  "music_cases": [
+    {
+      "name": "text-rules-warm",
+      "mode": "rules",
+      "input_kind": "text",
+      "input_text": "温暖轻快的吉他伴奏",
+      "request_id": "cloud-1791892888380-7",
+      "http_status": 200,
+      "elapsed_ms": 168,
+      "bpm": 96,
+      "key": {
+        "root": "C",
+        "mode": "major"
+      },
+      "chords": [
+        "C",
+        "G",
+        "Am",
+        "F"
+      ],
+      "events": 80,
+      "seed": 3245561678,
+      "json": "results/text-rules-warm.json",
+      "wav": "results/text-rules-warm.wav",
+      "pcm": {
+        "sample_rate": 32000,
+        "channels": 1,
+        "bits": 16,
+        "samples": 320000,
+        "nonzero": 296673,
+        "peak": 7222,
+        "rms": 948.7100776070238
+      },
+      "wav_sha256": "fd82bd32ca3caf91765fa80323fb7c65d8da76819c2310e03cf5487beb277148",
+      "status": "PASS"
+    },
+    {
+      "name": "text-ai-warm",
+      "mode": "ai",
+      "input_kind": "text",
+      "input_text": "温暖轻快的吉他伴奏",
+      "request_id": "cloud-1791892888661-8",
+      "http_status": 200,
+      "elapsed_ms": 2266,
+      "bpm": 96,
+      "key": {
+        "root": "C",
+        "mode": "major"
+      },
+      "chords": [
+        "C",
+        "G",
+        "Am",
+        "F"
+      ],
+      "events": 80,
+      "seed": 3245561678,
+      "json": "results/text-ai-warm.json",
+      "wav": "results/text-ai-warm.wav",
+      "pcm": {
+        "sample_rate": 32000,
+        "channels": 1,
+        "bits": 16,
+        "samples": 320000,
+        "nonzero": 296673,
+        "peak": 7222,
+        "rms": 948.7100776070238
+      },
+      "wav_sha256": "fd82bd32ca3caf91765fa80323fb7c65d8da76819c2310e03cf5487beb277148",
+      "status": "PASS"
+    },
+    {
+      "name": "text-rules-sad",
+      "mode": "rules",
+      "input_kind": "text",
+      "input_text": "悲伤慢的吉他伴奏",
+      "request_id": "cloud-1791892891028-9",
+      "http_status": 200,
+      "elapsed_ms": 149,
+      "bpm": 72,
+      "key": {
+        "root": "A",
+        "mode": "minor"
+      },
+      "chords": [
+        "Am",
+        "G",
+        "F",
+        "Em"
+      ],
+      "events": 80,
+      "seed": 306942069,
+      "json": "results/text-rules-sad.json",
+      "wav": "results/text-rules-sad.wav",
+      "pcm": {
+        "sample_rate": 32000,
+        "channels": 1,
+        "bits": 16,
+        "samples": 426667,
+        "nonzero": 392206,
+        "peak": 5541,
+        "rms": 938.8772587633814
+      },
+      "wav_sha256": "9b87de514668fb0c84b27127e809b83628b912bb4da52d8183f1fbf4ab63ca33",
+      "status": "PASS"
+    },
+    {
+      "name": "text-ai-sad",
+      "mode": "ai",
+      "input_kind": "text",
+      "input_text": "悲伤慢的吉他伴奏",
+      "request_id": "cloud-1791892891303-10",
+      "http_status": 200,
+      "elapsed_ms": 2547,
+      "bpm": 72,
+      "key": {
+        "root": "A",
+        "mode": "minor"
+      },
+      "chords": [
+        "Am",
+        "G",
+        "F",
+        "Em"
+      ],
+      "events": 80,
+      "seed": 306942069,
+      "json": "results/text-ai-sad.json",
+      "wav": "results/text-ai-sad.wav",
+      "pcm": {
+        "sample_rate": 32000,
+        "channels": 1,
+        "bits": 16,
+        "samples": 426667,
+        "nonzero": 392206,
+        "peak": 5541,
+        "rms": 938.8772587633814
+      },
+      "wav_sha256": "9b87de514668fb0c84b27127e809b83628b912bb4da52d8183f1fbf4ab63ca33",
+      "status": "PASS"
+    },
+    {
+      "name": "text-rules-rock",
+      "mode": "rules",
+      "input_kind": "text",
+      "input_text": "摇滚吉他伴奏 120BPM",
+      "request_id": "cloud-1791892893992-11",
+      "http_status": 200,
+      "elapsed_ms": 335,
+      "bpm": 120,
+      "key": {
+        "root": "E",
+        "mode": "minor"
+      },
+      "chords": [
+        "Em",
+        "D",
+        "C",
+        "D"
+      ],
+      "events": 144,
+      "seed": 2126450008,
+      "json": "results/text-rules-rock.json",
+      "wav": "results/text-rules-rock.wav",
+      "pcm": {
+        "sample_rate": 32000,
+        "channels": 1,
+        "bits": 16,
+        "samples": 256000,
+        "nonzero": 255942,
+        "peak": 10656,
+        "rms": 1747.6916778997374
+      },
+      "wav_sha256": "8aa60a9ee16dbdd5442e68d719ace6003dd1c96de55f8eb4bdca5caf8b1497ab",
+      "status": "PASS"
+    },
+    {
+      "name": "text-ai-rock",
+      "mode": "ai",
+      "input_kind": "text",
+      "input_text": "摇滚吉他伴奏 120BPM",
+      "request_id": "cloud-1791892894421-12",
+      "http_status": 200,
+      "elapsed_ms": 2884,
+      "bpm": 120,
+      "key": {
+        "root": "E",
+        "mode": "minor"
+      },
+      "chords": [
+        "Em",
+        "D",
+        "C",
+        "D"
+      ],
+      "events": 144,
+      "seed": 2126450008,
+      "json": "results/text-ai-rock.json",
+      "wav": "results/text-ai-rock.wav",
+      "pcm": {
+        "sample_rate": 32000,
+        "channels": 1,
+        "bits": 16,
+        "samples": 256000,
+        "nonzero": 255942,
+        "peak": 10656,
+        "rms": 1747.6916778997374
+      },
+      "wav_sha256": "8aa60a9ee16dbdd5442e68d719ace6003dd1c96de55f8eb4bdca5caf8b1497ab",
+      "status": "PASS"
+    },
+    {
+      "name": "audio-rules-warm",
+      "mode": "rules",
+      "input_kind": "Windows TTS WAV",
+      "transcript": "温暖轻快的吉他伴奏",
+      "request_id": "cloud-1791892897401-13",
+      "http_status": 200,
+      "elapsed_ms": 4542,
+      "bpm": 96,
+      "key": {
+        "root": "C",
+        "mode": "major"
+      },
+      "chords": [
+        "C",
+        "G",
+        "Am",
+        "F"
+      ],
+      "events": 80,
+      "seed": 3245561678,
+      "json": "results/audio-rules-warm.json",
+      "wav": "results/audio-rules-warm.wav",
+      "pcm": {
+        "sample_rate": 32000,
+        "channels": 1,
+        "bits": 16,
+        "samples": 320000,
+        "nonzero": 296673,
+        "peak": 7222,
+        "rms": 948.7100776070238
+      },
+      "wav_sha256": "fd82bd32ca3caf91765fa80323fb7c65d8da76819c2310e03cf5487beb277148",
+      "status": "PASS"
+    },
+    {
+      "name": "audio-ai-warm",
+      "mode": "ai",
+      "input_kind": "Windows TTS WAV",
+      "transcript": "温暖轻快的吉他伴奏",
+      "request_id": "cloud-1791892902059-14",
+      "http_status": 200,
+      "elapsed_ms": 3215,
+      "bpm": 96,
+      "key": {
+        "root": "C",
+        "mode": "major"
+      },
+      "chords": [
+        "C",
+        "G",
+        "Am",
+        "F"
+      ],
+      "events": 80,
+      "seed": 3245561678,
+      "json": "results/audio-ai-warm.json",
+      "wav": "results/audio-ai-warm.wav",
+      "pcm": {
+        "sample_rate": 32000,
+        "channels": 1,
+        "bits": 16,
+        "samples": 320000,
+        "nonzero": 296673,
+        "peak": 7222,
+        "rms": 948.7100776070238
+      },
+      "wav_sha256": "fd82bd32ca3caf91765fa80323fb7c65d8da76819c2310e03cf5487beb277148",
+      "status": "PASS"
+    },
+    {
+      "name": "audio-rules-sad",
+      "mode": "rules",
+      "input_kind": "Windows TTS WAV",
+      "transcript": "悲伤慢的吉他伴奏",
+      "request_id": "cloud-1791892905390-15",
+      "http_status": 200,
+      "elapsed_ms": 1144,
+      "bpm": 72,
+      "key": {
+        "root": "A",
+        "mode": "minor"
+      },
+      "chords": [
+        "Am",
+        "G",
+        "F",
+        "Em"
+      ],
+      "events": 80,
+      "seed": 306942069,
+      "json": "results/audio-rules-sad.json",
+      "wav": "results/audio-rules-sad.wav",
+      "pcm": {
+        "sample_rate": 32000,
+        "channels": 1,
+        "bits": 16,
+        "samples": 426667,
+        "nonzero": 392206,
+        "peak": 5541,
+        "rms": 938.8772587633814
+      },
+      "wav_sha256": "9b87de514668fb0c84b27127e809b83628b912bb4da52d8183f1fbf4ab63ca33",
+      "status": "PASS"
+    },
+    {
+      "name": "audio-ai-sad",
+      "mode": "ai",
+      "input_kind": "Windows TTS WAV",
+      "transcript": "悲伤慢的吉他伴奏",
+      "request_id": "cloud-1791892906644-16",
+      "http_status": 200,
+      "elapsed_ms": 3104,
+      "bpm": 72,
+      "key": {
+        "root": "A",
+        "mode": "minor"
+      },
+      "chords": [
+        "Am",
+        "G",
+        "F",
+        "Em"
+      ],
+      "events": 80,
+      "seed": 306942069,
+      "json": "results/audio-ai-sad.json",
+      "wav": "results/audio-ai-sad.wav",
+      "pcm": {
+        "sample_rate": 32000,
+        "channels": 1,
+        "bits": 16,
+        "samples": 426667,
+        "nonzero": 392206,
+        "peak": 5541,
+        "rms": 938.8772587633814
+      },
+      "wav_sha256": "9b87de514668fb0c84b27127e809b83628b912bb4da52d8183f1fbf4ab63ca33",
+      "status": "PASS"
+    },
+    {
+      "name": "audio-rules-rock",
+      "mode": "rules",
+      "input_kind": "Windows TTS WAV",
+      "transcript": "摇滚 120 BPM",
+      "request_id": "cloud-1791892909874-17",
+      "http_status": 200,
+      "elapsed_ms": 2323,
+      "bpm": 120,
+      "key": {
+        "root": "E",
+        "mode": "minor"
+      },
+      "chords": [
+        "Em",
+        "D",
+        "C",
+        "D"
+      ],
+      "events": 144,
+      "seed": 1792993304,
+      "json": "results/audio-rules-rock.json",
+      "wav": "results/audio-rules-rock.wav",
+      "pcm": {
+        "sample_rate": 32000,
+        "channels": 1,
+        "bits": 16,
+        "samples": 256000,
+        "nonzero": 255936,
+        "peak": 9068,
+        "rms": 1643.5192549509516
+      },
+      "wav_sha256": "53848d23154d29b871caac0beb4ff89fd8c6ab8b0b2aaa7a6c0cfd56c3f08063",
+      "status": "PASS"
+    },
+    {
+      "name": "audio-ai-rock",
+      "mode": "ai",
+      "input_kind": "Windows TTS WAV",
+      "transcript": "摇滚 120 BPM",
+      "request_id": "cloud-1791892912301-18",
+      "http_status": 200,
+      "elapsed_ms": 4889,
+      "bpm": 120,
+      "key": {
+        "root": "E",
+        "mode": "minor"
+      },
+      "chords": [
+        "Em",
+        "D",
+        "C",
+        "D"
+      ],
+      "events": 144,
+      "seed": 1792993304,
+      "json": "results/audio-ai-rock.json",
+      "wav": "results/audio-ai-rock.wav",
+      "pcm": {
+        "sample_rate": 32000,
+        "channels": 1,
+        "bits": 16,
+        "samples": 256000,
+        "nonzero": 255936,
+        "peak": 9068,
+        "rms": 1643.5192549509516
+      },
+      "wav_sha256": "53848d23154d29b871caac0beb4ff89fd8c6ab8b0b2aaa7a6c0cfd56c3f08063",
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS",
+  "completed_at": "2026-10-13T12:01:57.270Z"
+}
