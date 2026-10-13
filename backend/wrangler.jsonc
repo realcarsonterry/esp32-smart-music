@@ -1,0 +1,7 @@
+{
+  "name": "esp32-smart-music",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-10-13",
+  "dev": { "ip": "127.0.0.1", "port": 8787 },
+  "vars": { "ALLOW_DEPLOY": "0", "ALLOW_MOCK": "0", "AUTH_REQUIRED": "0" }
+}

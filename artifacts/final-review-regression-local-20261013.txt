@@ -1,0 +1,464 @@
+Microsoft Windows NT 10.0.26200.0; X64; PowerShell 7.6.6; Node v24.19.0
+Command: C:\Program Files\nodejs\node.exe --version
+v24.19.0
+Command: C:\Program Files\nodejs\npm.cmd --version
+11.17.0
+Command: C:\Program Files\CMake\bin\cmake.exe --version
+cmake version 4.4.4
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+Command: C:\Program Files\CMake\bin\ctest.exe --version
+ctest version 4.4.4
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+Command: C:\Users\Terry\AppData\Local\Temp\context-stage2-tools\w64devkit\bin\gcc.exe --version
+gcc.exe (GCC) 16.2.0
+Copyright (C) 2026 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Command: C:\Users\Terry\AppData\Local\Temp\context-stage2-tools\w64devkit\bin\ninja.exe --version
+1.13.2
+Command: C:\Program Files\nodejs\node.exe node_modules/wrangler/bin/wrangler.js --version
+4.149.0
+Command: C:\Program Files\CMake\bin\cmake.exe -S . -B build -G Ninja -DCMAKE_C_COMPILER=C:\Users\Terry\AppData\Local\Temp\context-stage2-tools\w64devkit\bin\gcc.exe -DCMAKE_MAKE_PROGRAM=C:\Users\Terry\AppData\Local\Temp\context-stage2-tools\w64devkit\bin\ninja.exe
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: C:/Users/Terry/Desktop/context/build
+Command: C:\Program Files\CMake\bin\cmake.exe --build build --config Release
+ninja: no work to do.
+Command: C:\Program Files\PowerShell\7\pwsh.exe -NoProfile -ExecutionPolicy Bypass -File scripts/test.ps1
+ninja: no work to do.
+Test project C:/Users/Terry/Desktop/context/build
+      Start  1: core_ticks
+ 1/20 Test  #1: core_ticks .......................   Passed    0.08 sec
+      Start  2: core_rng
+ 2/20 Test  #2: core_rng .........................   Passed    0.01 sec
+      Start  3: core_valid
+ 3/20 Test  #3: core_valid .......................   Passed    0.01 sec
+      Start  4: core_bpm
+ 4/20 Test  #4: core_bpm .........................   Passed    0.01 sec
+      Start  5: core_midi
+ 5/20 Test  #5: core_midi ........................   Passed    0.01 sec
+      Start  6: core_time
+ 6/20 Test  #6: core_time ........................   Passed    0.01 sec
+      Start  7: core_polyphony
+ 7/20 Test  #7: core_polyphony ...................   Passed    0.01 sec
+      Start  8: core_protocol
+ 8/20 Test  #8: core_protocol ....................   Passed    0.01 sec
+      Start  9: core_structure
+ 9/20 Test  #9: core_structure ...................   Passed    0.01 sec
+      Start 10: core_chords
+10/20 Test #10: core_chords ......................   Passed    0.01 sec
+      Start 11: core_context
+11/20 Test #11: core_context .....................   Passed    0.01 sec
+      Start 12: core_pcm
+12/20 Test #12: core_pcm .........................   Passed    0.01 sec
+      Start 13: core_wav
+13/20 Test #13: core_wav .........................   Passed    0.01 sec
+      Start 14: ks_pitch
+14/20 Test #14: ks_pitch .........................   Passed    0.07 sec
+      Start 15: ks_velocity
+15/20 Test #15: ks_velocity ......................   Passed    0.01 sec
+      Start 16: ks_release
+16/20 Test #16: ks_release .......................   Passed    0.01 sec
+      Start 17: ks_limits
+17/20 Test #17: ks_limits ........................   Passed    0.01 sec
+      Start 18: ks_blocks
+18/20 Test #18: ks_blocks ........................   Passed    0.02 sec
+      Start 19: ks_seed_reset
+19/20 Test #19: ks_seed_reset ....................   Passed    0.03 sec
+      Start 20: simulator_cli
+20/20 Test #20: simulator_cli ....................   Passed    0.88 sec
+
+100% tests passed out of 20
+
+Total Test time (real) =   1.27 sec
+Environment: Microsoft Windows NT 10.0.26200.0; PowerShell 7.6.6
+Command: C:\Users\Terry\Desktop\context\build\simulator.exe shared/fixtures/valid-one-bar.json artifacts/valid-one-bar.wav
+samples=80000 rate=32000 channels=1 bits=16
+Valid exit code: 0
+WAV PASS: samples=80000 rate=32000 channels=1 bits=16 bytes=160044 first_second_nonzero_samples=20631
+Command: C:\Users\Terry\Desktop\context\build\simulator.exe shared/fixtures/invalid-bpm.json artifacts/stage-4-005a2466ba604a2083d47de7dc46b790-invalid-bpm.wav
+INVALID_BPM
+invalid-bpm PASS: exit=2 output_exists=False
+Command: C:\Users\Terry\Desktop\context\build\simulator.exe shared/fixtures/invalid-midi.json artifacts/stage-4-005a2466ba604a2083d47de7dc46b790-invalid-midi.wav
+INVALID_MUSIC_DATA
+invalid-midi PASS: exit=2 output_exists=False
+Command: C:\Users\Terry\Desktop\context\build\simulator.exe shared/fixtures/invalid-overflow-time.json artifacts/stage-4-005a2466ba604a2083d47de7dc46b790-invalid-overflow-time.wav
+INVALID_MUSIC_DATA
+invalid-overflow-time PASS: exit=2 output_exists=False
+Command: C:\Users\Terry\Desktop\context\build\simulator.exe shared/fixtures/invalid-polyphony.json artifacts/stage-4-005a2466ba604a2083d47de7dc46b790-invalid-polyphony.wav
+INVALID_MUSIC_DATA
+invalid-polyphony PASS: exit=2 output_exists=False
+Command: C:\Users\Terry\Desktop\context\build\simulator.exe shared/fixtures/invalid-version.json artifacts/stage-4-005a2466ba604a2083d47de7dc46b790-invalid-version.wav
+UNSUPPORTED_PROTOCOL_VERSION
+invalid-version PASS: exit=2 output_exists=False
+Result: C:\Users\Terry\Desktop\context\artifacts\valid-one-bar.wav
+Stage 4 verification: PASS
+
+> esp32-smart-music-backend@1.0.0 typecheck
+> tsc --noEmit
+
+
+> esp32-smart-music-backend@1.0.0 test
+> node --import tsx --test backend/tests/*.test.mjs
+
+✔ AI_UNAVAILABLE: no binding, null binding, malformed binding (17.3396ms)
+✔ invalid JSON retries exactly once; two invalid results return AI_OUTPUT_INVALID (3.7912ms)
+✔ one invalid JSON then valid intent succeeds; only rules generate events (3.4807ms)
+✔ all four validated intents use SPEC rules, original text hash and explicit BPM (5.3187ms)
+✔ strict intent gate rejects missing/extra fields, model events, wrong types/ranges/preset pairs (6.1302ms)
+✔ schema-invalid intent may recover on the second attempt (1.0281ms)
+✔ model errors are sanitized MODEL_ERROR with no retry or rules fallback (0.5617ms)
+✔ bad AI requests fail before model calls (1.6931ms)
+✔ rules/default/mock/health/info call fake model zero times (1.8006ms)
+✔ audio without a usable AI binding returns sanitized ASR_UNAVAILABLE / 503; hint cannot substitute (37.6124ms)
+✔ audio rules/default: one multilingual ASR call with exact Base64 WAV, then original rules and assertMusic (39.3873ms)
+✔ empty transcription returns EMPTY_TRANSCRIPTION / 502 once, including with hint (7.5097ms)
+✔ ASR failures and malformed output are sanitized ASR_FAILED / 502 with no retry (38.3514ms)
+✔ illegal audio, auth, size and multipart/mode errors never call ASR or LLM (13.3473ms)
+✔ audio ai: one ASR then one LLM intent extraction, with recognized text and no hint (7.2206ms)
+✔ audio LLM failure/invalid intent never retries ASR, retries LLM or falls back to rules (13.6293ms)
+✔ optional transcript schema accepts Unicode metadata and rejects incompatible values (0.9878ms)
+✔ preset, exact voicings/ticks and HTTP: 生成一段温暖、轻快、适合夏日海边的木吉他伴奏 (26.6556ms)
+✔ FNV-1a decimal vector: 691577472 (0.9222ms)
+✔ preset, exact voicings/ticks and HTTP: 来一段悲伤、慢的木吉他 (1.2143ms)
+✔ FNV-1a decimal vector: 3350900807 (0.6617ms)
+✔ preset, exact voicings/ticks and HTTP: 强烈、摇滚的木吉他伴奏 (1.686ms)
+✔ FNV-1a decimal vector: 1415375574 (0.8236ms)
+✔ preset, exact voicings/ticks and HTTP: 随便来一段伴奏 (1.0778ms)
+✔ FNV-1a decimal vector: 3245418374 (0.4667ms)
+✔ FNV hashes UTF-8 without Unicode normalization or broad whitespace trimming (0.2176ms)
+✔ pure generator keeps independent RNG state and returns independent objects (0.5646ms)
+✔ keyword priority is rock > sad > bright > default (0.2582ms)
+✔ explicit BPM overrides only tempo; all allowed suffixes and endpoints (3.1833ms)
+✔ empty/missing/invalid/overlength text and invalid seeds are rejected (1.7454ms)
+✔ schema and cross-field fixtures: valid, BPM, MIDI, version, overflow, nine voices (1.3143ms)
+✔ cross-fields reject duplicate IDs, invalid spans, chord gaps and off-chord accompaniment (0.7884ms)
+✔ request_id echo on success and errors, header fallback and validation (1.1282ms)
+✔ ASCII request_id contract rejects review regressions before success and keeps errors valid (4.1627ms)
+✔ health/info/rules/mock never call network/model; missing or inaccessible AI unavailable (1.786ms)
+✔ valid WAV (including 4-second boundary) reaches ASR_UNAVAILABLE, regardless of extension (10.4279ms)
+✔ WAV content validation rejects corrupt headers, wrong formats, silence, empty/long/truncated data (9.4567ms)
+✔ body limits apply to actual streaming JSON/multipart bytes, not just Content-Length (6.6901ms)
+✔ auth defaults off; explicit AUTH_REQUIRED=1 checks bearer without exposing token (1.1962ms)
+✔ malformed JSON, content types, multipart, field/mode types and methods return schema-valid errors (1.1778ms)
+ℹ tests 40
+ℹ suites 0
+ℹ pass 40
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 464.4097
+Stages 4 and 5: PASS
+Command: C:\Program Files\CMake\bin\ctest.exe --test-dir build -C Release --output-on-failure -V
+UpdateCTestConfiguration  from :C:/Users/Terry/Desktop/context/build/DartConfiguration.tcl
+Parse Config file:C:/Users/Terry/Desktop/context/build/DartConfiguration.tcl
+Test project C:/Users/Terry/Desktop/context/build
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+      Start  1: core_ticks
+
+1: Test command: C:\Users\Terry\Desktop\context\build\core_tests.exe "ticks"
+1: Working Directory: C:/Users/Terry/Desktop/context/build
+1: Test timeout computed to be: 1500
+ 1/20 Test  #1: core_ticks .......................   Passed    0.07 sec
+test 2
+      Start  2: core_rng
+
+2: Test command: C:\Users\Terry\Desktop\context\build\core_tests.exe "rng"
+2: Working Directory: C:/Users/Terry/Desktop/context/build
+2: Test timeout computed to be: 1500
+ 2/20 Test  #2: core_rng .........................   Passed    0.01 sec
+test 3
+      Start  3: core_valid
+
+3: Test command: C:\Users\Terry\Desktop\context\build\core_tests.exe "valid"
+3: Working Directory: C:/Users/Terry/Desktop/context/build
+3: Test timeout computed to be: 1500
+ 3/20 Test  #3: core_valid .......................   Passed    0.01 sec
+test 4
+      Start  4: core_bpm
+
+4: Test command: C:\Users\Terry\Desktop\context\build\core_tests.exe "bpm"
+4: Working Directory: C:/Users/Terry/Desktop/context/build
+4: Test timeout computed to be: 1500
+ 4/20 Test  #4: core_bpm .........................   Passed    0.01 sec
+test 5
+      Start  5: core_midi
+
+5: Test command: C:\Users\Terry\Desktop\context\build\core_tests.exe "midi"
+5: Working Directory: C:/Users/Terry/Desktop/context/build
+5: Test timeout computed to be: 1500
+ 5/20 Test  #5: core_midi ........................   Passed    0.01 sec
+test 6
+      Start  6: core_time
+
+6: Test command: C:\Users\Terry\Desktop\context\build\core_tests.exe "time"
+6: Working Directory: C:/Users/Terry/Desktop/context/build
+6: Test timeout computed to be: 1500
+ 6/20 Test  #6: core_time ........................   Passed    0.01 sec
+test 7
+      Start  7: core_polyphony
+
+7: Test command: C:\Users\Terry\Desktop\context\build\core_tests.exe "polyphony"
+7: Working Directory: C:/Users/Terry/Desktop/context/build
+7: Test timeout computed to be: 1500
+ 7/20 Test  #7: core_polyphony ...................   Passed    0.01 sec
+test 8
+      Start  8: core_protocol
+
+8: Test command: C:\Users\Terry\Desktop\context\build\core_tests.exe "protocol"
+8: Working Directory: C:/Users/Terry/Desktop/context/build
+8: Test timeout computed to be: 1500
+ 8/20 Test  #8: core_protocol ....................   Passed    0.01 sec
+test 9
+      Start  9: core_structure
+
+9: Test command: C:\Users\Terry\Desktop\context\build\core_tests.exe "structure"
+9: Working Directory: C:/Users/Terry/Desktop/context/build
+9: Test timeout computed to be: 1500
+ 9/20 Test  #9: core_structure ...................   Passed    0.01 sec
+test 10
+      Start 10: core_chords
+
+10: Test command: C:\Users\Terry\Desktop\context\build\core_tests.exe "chords"
+10: Working Directory: C:/Users/Terry/Desktop/context/build
+10: Test timeout computed to be: 1500
+10/20 Test #10: core_chords ......................   Passed    0.01 sec
+test 11
+      Start 11: core_context
+
+11: Test command: C:\Users\Terry\Desktop\context\build\core_tests.exe "context"
+11: Working Directory: C:/Users/Terry/Desktop/context/build
+11: Test timeout computed to be: 1500
+11/20 Test #11: core_context .....................   Passed    0.01 sec
+test 12
+      Start 12: core_pcm
+
+12: Test command: C:\Users\Terry\Desktop\context\build\core_tests.exe "pcm"
+12: Working Directory: C:/Users/Terry/Desktop/context/build
+12: Test timeout computed to be: 1500
+12/20 Test #12: core_pcm .........................   Passed    0.01 sec
+test 13
+      Start 13: core_wav
+
+13: Test command: C:\Users\Terry\Desktop\context\build\core_tests.exe "wav"
+13: Working Directory: C:/Users/Terry/Desktop/context/build
+13: Test timeout computed to be: 1500
+13/20 Test #13: core_wav .........................   Passed    0.01 sec
+test 14
+      Start 14: ks_pitch
+
+14: Test command: C:\Users\Terry\Desktop\context\build\ks_tests.exe "pitch"
+14: Working Directory: C:/Users/Terry/Desktop/context/build
+14: Test timeout computed to be: 1500
+14: MIDI 52: target=164.813778456 Hz measured=164.813778456 Hz cents=+0
+14: MIDI 57: target=220.000000000 Hz measured=220.000000000 Hz cents=+0
+14: MIDI 64: target=329.627556913 Hz measured=329.627556913 Hz cents=+0
+14: MIDI 69: target=440.000000000 Hz measured=440.000000000 Hz cents=+0
+14/20 Test #14: ks_pitch .........................   Passed    0.08 sec
+test 15
+      Start 15: ks_velocity
+
+15: Test command: C:\Users\Terry\Desktop\context\build\ks_tests.exe "velocity"
+15: Working Directory: C:/Users/Terry/Desktop/context/build
+15: Test timeout computed to be: 1500
+15: velocity 40 RMS=184.654901; velocity 100 RMS=461.633989; ratio=0.400003
+15/20 Test #15: ks_velocity ......................   Passed    0.01 sec
+test 16
+      Start 16: ks_release
+
+16: Test command: C:\Users\Terry\Desktop\context\build\ks_tests.exe "release"
+16: Working Directory: C:/Users/Terry/Desktop/context/build
+16: Test timeout computed to be: 1500
+16: release RMS first 160=334.434196; last 160=45.978392
+16/20 Test #16: ks_release .......................   Passed    0.01 sec
+test 17
+      Start 17: ks_limits
+
+17: Test command: C:\Users\Terry\Desktop\context\build\ks_tests.exe "limits"
+17: Working Directory: C:/Users/Terry/Desktop/context/build
+17: Test timeout computed to be: 1500
+17: eight-note peak=16157; PCM limit=32112
+17/20 Test #17: ks_limits ........................   Passed    0.01 sec
+test 18
+      Start 18: ks_blocks
+
+18: Test command: C:\Users\Terry\Desktop\context\build\ks_tests.exe "blocks"
+18: Working Directory: C:/Users/Terry/Desktop/context/build
+18: Test timeout computed to be: 1500
+18: whole/256/1: 35549 samples identical, including releases and EOF
+18/20 Test #18: ks_blocks ........................   Passed    0.02 sec
+test 19
+      Start 19: ks_seed_reset
+
+19: Test command: C:\Users\Terry\Desktop\context\build\ks_tests.exe "seed_reset"
+19: Working Directory: C:/Users/Terry/Desktop/context/build
+19: Test timeout computed to be: 1500
+19: seed 0: two renders and partial-playback reset identical
+19: seed 1: two renders and partial-playback reset identical
+19: seed 4294967295: two renders and partial-playback reset identical
+19/20 Test #19: ks_seed_reset ....................   Passed    0.04 sec
+test 20
+      Start 20: simulator_cli
+
+20: Test command: "C:\Program Files\CMake\bin\cmake.exe" "-DSIMULATOR=C:/Users/Terry/Desktop/context/build/simulator.exe" "-DSOURCE_DIR=C:/Users/Terry/Desktop/context" "-DTEST_DIR=C:/Users/Terry/Desktop/context/build/simulator-tests" "-P" "C:/Users/Terry/Desktop/context/tests/simulator_tests.cmake"
+20: Working Directory: C:/Users/Terry/Desktop/context/build
+20: Test timeout computed to be: 1500
+20: -- Valid fixture: exit=0 samples=80000 rate=32000 channels=1 bits=16 first_second_nonzero=true
+20: -- invalid-bpm: exit=2 output_exists=false existing_output_preserved=true
+20: -- invalid-midi: exit=2 output_exists=false existing_output_preserved=true
+20: -- invalid-overflow-time: exit=2 output_exists=false existing_output_preserved=true
+20: -- invalid-polyphony: exit=2 output_exists=false existing_output_preserved=true
+20: -- invalid-version: exit=2 output_exists=false existing_output_preserved=true
+20: -- fractional-bpm: exit=2 output_exists=false existing_output_preserved=true
+20: -- string-bpm: exit=2 output_exists=false existing_output_preserved=true
+20: -- leading-zero: exit=2 output_exists=false existing_output_preserved=true
+20: -- trailing-dot: exit=2 output_exists=false existing_output_preserved=true
+20: -- negative-seed: exit=2 output_exists=false existing_output_preserved=true
+20: -- overflow-seed: exit=2 output_exists=false existing_output_preserved=true
+20: -- overflow-tick: exit=2 output_exists=false existing_output_preserved=true
+20: -- wrap-span: exit=2 output_exists=false existing_output_preserved=true
+20: -- duplicate-key: exit=2 output_exists=false existing_output_preserved=true
+20: -- extra-key: exit=2 output_exists=false existing_output_preserved=true
+20: -- missing-key: exit=2 output_exists=false existing_output_preserved=true
+20: -- nested-extra: exit=2 output_exists=false existing_output_preserved=true
+20: -- unknown-part: exit=2 output_exists=false existing_output_preserved=true
+20: -- duplicate-id: exit=2 output_exists=false existing_output_preserved=true
+20: -- wrong-chord-pitch: exit=2 output_exists=false existing_output_preserved=true
+20: -- overlong-id: exit=2 output_exists=false existing_output_preserved=true
+20: -- embedded-nul: exit=2 output_exists=false existing_output_preserved=true
+20: -- request-id-space: exit=2 output_exists=false existing_output_preserved=true
+20: -- request-id-unicode: exit=2 output_exists=false existing_output_preserved=true
+20: -- request-id-newline: exit=2 output_exists=false existing_output_preserved=true
+20: -- request-id-empty: exit=2 output_exists=false existing_output_preserved=true
+20: -- request-id-overlong: exit=2 output_exists=false existing_output_preserved=true
+20: -- empty: exit=2 output_exists=false existing_output_preserved=true
+20: -- truncated: exit=2 output_exists=false existing_output_preserved=true
+20: -- trailing-json: exit=2 output_exists=false existing_output_preserved=true
+20/20 Test #20: simulator_cli ....................   Passed    0.98 sec
+
+100% tests passed out of 20
+
+Total Test time (real) =   1.39 sec
+Command: C:\Program Files\CMake\bin\cmake.exe -S firmware/tests -B build/stage7-host -G Ninja -DCMAKE_C_COMPILER=C:\Users\Terry\AppData\Local\Temp\context-stage2-tools\w64devkit\bin\gcc.exe -DCMAKE_MAKE_PROGRAM=C:\Users\Terry\AppData\Local\Temp\context-stage2-tools\w64devkit\bin\ninja.exe
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: C:/Users/Terry/Desktop/context/build/stage7-host
+Command: C:\Program Files\CMake\bin\cmake.exe --build build/stage7-host --config Release
+ninja: no work to do.
+Command: C:\Program Files\CMake\bin\ctest.exe --test-dir build/stage7-host -C Release --output-on-failure -V
+UpdateCTestConfiguration  from :C:/Users/Terry/Desktop/context/build/stage7-host/DartConfiguration.tcl
+Test project C:/Users/Terry/Desktop/context/build/stage7-host
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: firmware_host_checks
+
+1: Test command: C:\Users\Terry\Desktop\context\build\stage7-host\firmware_host_checks.exe "C:/Users/Terry/Desktop/context/firmware/tests/../../shared/fixtures/valid-one-bar.json"
+1: Working Directory: C:/Users/Terry/Desktop/context/build/stage7-host
+1: Test timeout computed to be: 10000000
+1: PASS: state recovery, URL policy, WAV/slot conversion, 64000-frame recording,
+1: partial I2S writes/timeouts, exact shared-core stereo PCM, tail drain, error stop.
+1: Host fake I2S only; ESP-IDF build and physical hardware were not tested.
+1/2 Test #1: firmware_host_checks .............   Passed    0.02 sec
+test 2
+    Start 2: firmware_transport_checks
+
+2: Test command: C:\Users\Terry\Desktop\context\build\stage7-host\firmware_transport_checks.exe
+2: Working Directory: C:/Users/Terry/Desktop/context/build/stage7-host
+2: Test timeout computed to be: 10000000
+2: PASS: exact multipart WAV, short HTTP writes, aliased response, cached/chunked reads,
+2: truncation/size/status rejection and cleanup. Fake HTTP only; no network request.
+2/2 Test #2: firmware_transport_checks ........   Passed    0.01 sec
+
+100% tests passed out of 2
+
+Total Test time (real) =   0.03 sec
+Command: C:\Program Files\PowerShell\7\pwsh.exe -NoProfile -ExecutionPolicy Bypass -File scripts/smoke-test.ps1
+Command: node node_modules/wrangler/bin/wrangler.js dev --local --config backend/wrangler.jsonc --ip 127.0.0.1 --port 8787 --inspector-port 0 --show-interactive-dev-session=false
+Worker PID: 31628; port=8787
+Health: PASS (http://127.0.0.1:8787/health; owned listener)
+HTTP status: 200; JSON: C:\Users\Terry\Desktop\context\artifacts\generated_music.json
+samples=320000 rate=32000 channels=1 bits=16
+request_id: stage-6-f61c9f6089644533930fa2b74d98b8fb
+mode: rules
+bpm: 96
+调式: C major
+和弦: C, G, Am, F
+WAV: C:\Users\Terry\Desktop\context\artifacts\generated_music.wav
+Simulator: PASS
+Worker cleanup: private job closed (only owned processes).
+EXIT_CODE=0
+HTTP JSON: PASS (rules; C major; bpm=96; chords=C,G,Am,F; seed=691577472)
+WAV: PASS (PCM16 LE; rate=32000; channels=1; samples=320000; bytes=640044; nonzero=296729; first_second_nonzero=30547; peak=6503; RMS=1080.37424241556)
+WAV absolute path: C:\Users\Terry\Desktop\context\artifacts\generated_music.wav
+WAV SHA256: D3358F8CB9DBA6F5A25ABA1D0030D8578F4D4B9C2ED1C8CD326736F245A94BBA
+Smoke test: PASS (whole-track pitch test is not applicable)
+EXIT_CODE=0
+Command: C:\Program Files\PowerShell\7\pwsh.exe -NoProfile -ExecutionPolicy Bypass -File tests/verify-stage6.ps1
+Environment: Microsoft Windows NT 10.0.26200.0; PowerShell 7.6.6
+Command: run-simulator.ps1 -Text <specified Chinese text> -Mode rules (8787 held by this test)
+Command: node node_modules/wrangler/bin/wrangler.js dev --local --config backend/wrangler.jsonc --ip 127.0.0.1 --port 8877 --inspector-port 0 --show-interactive-dev-session=false
+Worker PID: 51668; port=8877
+Health: PASS (http://127.0.0.1:8877/health; owned listener)
+HTTP status: 200; JSON: C:\Users\Terry\Desktop\context\artifacts\generated_music.json
+samples=320000 rate=32000 channels=1 bits=16
+request_id: stage-6-11081e6c702348c8b5155be7ec5a8a73
+mode: rules
+bpm: 96
+调式: C major
+和弦: C, G, Am, F
+WAV: C:\Users\Terry\Desktop\context\artifacts\generated_music.wav
+Simulator: PASS
+Worker cleanup: private job closed (only owned processes).
+EXIT_CODE=0
+Fallback: PASS (8877 selected; existing 8787 listener survives; 8877 released)
+Command: run-simulator.ps1 -Text <specified Chinese text> -Mode rules (both ports held)
+Exception: Ports 8787 and 8877 are occupied; no process was stopped.
+EXIT_CODE=5
+Both occupied: PASS (exit=5; listeners and JSON/WAV unchanged)
+Command: run-simulator.ps1 -Text <specified Chinese text> -Mode ai
+Command: node node_modules/wrangler/bin/wrangler.js dev --local --config backend/wrangler.jsonc --ip 127.0.0.1 --port 8787 --inspector-port 0 --show-interactive-dev-session=false
+Worker PID: 17008; port=8787
+Health: PASS (http://127.0.0.1:8787/health; owned listener)
+HTTP status: 503; JSON: C:\Users\Terry\Desktop\context\artifacts\generated_music.json
+Exception: HTTP failed: 503; response saved.
+Worker cleanup: private job closed (only owned processes).
+EXIT_CODE=4
+HTTP failure: PASS (503; exit=4; error JSON saved; WAV unchanged; owned ports released)
+Stage 6 integration: PASS
+Command: C:\Program Files\PowerShell\7\pwsh.exe -NoProfile -ExecutionPolicy Bypass -File scripts/smoke-test.ps1
+Command: node node_modules/wrangler/bin/wrangler.js dev --local --config backend/wrangler.jsonc --ip 127.0.0.1 --port 8787 --inspector-port 0 --show-interactive-dev-session=false
+Worker PID: 47340; port=8787
+Health: PASS (http://127.0.0.1:8787/health; owned listener)
+HTTP status: 200; JSON: C:\Users\Terry\Desktop\context\artifacts\generated_music.json
+samples=320000 rate=32000 channels=1 bits=16
+request_id: stage-6-0cd65ee57763406f9fdce0df85e30837
+mode: rules
+bpm: 96
+调式: C major
+和弦: C, G, Am, F
+WAV: C:\Users\Terry\Desktop\context\artifacts\generated_music.wav
+Simulator: PASS
+Worker cleanup: private job closed (only owned processes).
+EXIT_CODE=0
+HTTP JSON: PASS (rules; C major; bpm=96; chords=C,G,Am,F; seed=691577472)
+WAV: PASS (PCM16 LE; rate=32000; channels=1; samples=320000; bytes=640044; nonzero=296729; first_second_nonzero=30547; peak=6503; RMS=1080.37424241556)
+WAV absolute path: C:\Users\Terry\Desktop\context\artifacts\generated_music.wav
+WAV SHA256: D3358F8CB9DBA6F5A25ABA1D0030D8578F4D4B9C2ED1C8CD326736F245A94BBA
+Smoke test: PASS (whole-track pitch test is not applicable)
+EXIT_CODE=0
+Stage 8 regression: PASS

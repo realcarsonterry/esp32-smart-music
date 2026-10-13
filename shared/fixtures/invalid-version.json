@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "protocol_version": "9.9",
+  "request_id": "invalid-version",
+  "mode": "rules",
+  "seed": 1,
+  "bpm": 96,
+  "time_signature": { "numerator": 4, "denominator": 4 },
+  "ppq": 480,
+  "bars": 1,
+  "key": { "root": "C", "mode": "major" },
+  "chords": [
+    { "start_tick": 0, "duration_tick": 1920, "symbol": "C", "midi_notes": [48, 52, 55, 60] }
+  ],
+  "events": [
+    { "id": "a0", "part": "accompaniment", "midi": 48, "velocity": 90, "start_tick": 0, "duration_tick": 400 },
+    { "id": "a1", "part": "accompaniment", "midi": 52, "velocity": 90, "start_tick": 10, "duration_tick": 400 },
+    { "id": "a2", "part": "accompaniment", "midi": 55, "velocity": 90, "start_tick": 20, "duration_tick": 400 },
+    { "id": "a3", "part": "accompaniment", "midi": 60, "velocity": 90, "start_tick": 30, "duration_tick": 400 },
+    { "id": "m0", "part": "melody", "midi": 64, "velocity": 80, "start_tick": 0, "duration_tick": 480 }
+  ]
+}

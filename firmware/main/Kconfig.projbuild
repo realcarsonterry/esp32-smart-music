@@ -1,0 +1,51 @@
+menu "Stage 7 music device"
+config FW_WIFI_SSID
+    string "Wi-Fi SSID (NVS overrides menu)"
+    default ""
+config FW_WIFI_PASSWORD
+    string "Wi-Fi password (NVS overrides menu; keep sdkconfig private)"
+    default ""
+config FW_DEVICE_TOKEN
+    string "Backend bearer token (NVS overrides menu; keep sdkconfig private)"
+    default ""
+config FW_BACKEND_URL
+    string "Backend base URL, e.g. http://192.168.1.10:8787"
+    default ""
+config FW_ALLOW_LAN_HTTP
+    bool "Allow HTTP to a literal RFC1918 IPv4 address for LAN development"
+    default n
+config FW_NTP_SERVER
+    string "NTP server for HTTPS certificate validity checks"
+    default "pool.ntp.org"
+config FW_MIC_RIGHT
+    bool "Read microphone right slot (INMP441 L/R tied high)"
+    default n
+config FW_MIC_BCLK
+    int "Microphone BCLK GPIO (unverified suggestion)"
+    range 0 48
+    default 5
+config FW_MIC_WS
+    int "Microphone WS GPIO (unverified suggestion)"
+    range 0 48
+    default 6
+config FW_MIC_DIN
+    int "Microphone SD GPIO (unverified suggestion)"
+    range 0 48
+    default 7
+config FW_AMP_BCLK
+    int "Amplifier BCLK GPIO (unverified suggestion)"
+    range 0 48
+    default 15
+config FW_AMP_WS
+    int "Amplifier WS GPIO (unverified suggestion)"
+    range 0 48
+    default 16
+config FW_AMP_DOUT
+    int "Amplifier DIN GPIO (unverified suggestion)"
+    range 0 48
+    default 17
+config FW_TRIGGER_GPIO
+    int "Active-low record button GPIO (unverified suggestion)"
+    range 0 48
+    default 4
+endmenu

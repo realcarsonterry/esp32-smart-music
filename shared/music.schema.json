@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/music-1.0.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["ok", "protocol_version", "request_id", "mode", "seed", "bpm", "time_signature", "ppq", "bars", "key", "chords", "events"],
+  "properties": {
+    "ok": { "const": true },
+    "protocol_version": { "const": "1.0" },
+    "request_id": { "type": "string", "minLength": 1, "maxLength": 64, "pattern": "^[A-Za-z0-9._:-]{1,64}$", "not": { "pattern": "[^A-Za-z0-9._:-]" } },
+    "mode": { "enum": ["rules", "ai", "mock"] },
+    "transcript": { "type": "string", "minLength": 1, "maxLength": 500, "not": { "pattern": "[\\u0000\\uD800-\\uDFFF]" } },
+    "seed": { "type": "integer", "minimum": 0, "maximum": 4294967295 },
+    "bpm": { "type": "integer", "minimum": 40, "maximum": 220 },
+    "time_signature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": { "const": 4 },
+        "denominator": { "const": 4 }
+      }
+    },
+    "ppq": { "const": 480 },
+    "bars": { "type": "integer", "minimum": 1, "maximum": 16 },
+    "key": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["root", "mode"],
+      "properties": {
+        "root": { "enum": ["A", "B", "C", "D", "E", "F", "G"] },
+        "mode": { "enum": ["major", "minor"] }
+      }
+    },
+    "chords": {
+      "type": "array",
+      "maxItems": 64,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["start_tick", "duration_tick", "symbol", "midi_notes"],
+        "properties": {
+          "start_tick": { "type": "integer", "minimum": 0 },
+          "duration_tick": { "type": "integer", "minimum": 1 },
+          "symbol": { "type": "string", "minLength": 1, "maxLength": 15 },
+          "midi_notes": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 6,
+            "items": { "type": "integer", "minimum": 40, "maximum": 84 }
+          }
+        }
+      }
+    },
+    "events": {
+      "type": "array",
+      "maxItems": 512,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "part", "midi", "velocity", "start_tick", "duration_tick"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1, "maxLength": 15 },
+          "part": { "enum": ["accompaniment", "melody"] },
+          "midi": { "type": "integer", "minimum": 40, "maximum": 84 },
+          "velocity": { "type": "integer", "minimum": 1, "maximum": 127 },
+          "start_tick": { "type": "integer", "minimum": 0 },
+          "duration_tick": { "type": "integer", "minimum": 1 }
+        }
+      }
+    }
+  }
+}

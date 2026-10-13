@@ -1,0 +1,18 @@
+Windows software demonstration: local HTTP -> Music JSON -> shared C KS -> WAV
+This does not demonstrate an ESP32, physical microphone, or real ASR.
+Command: node node_modules/wrangler/bin/wrangler.js dev --local --config backend/wrangler.jsonc --ip 127.0.0.1 --port 8787 --inspector-port 0 --show-interactive-dev-session=false
+Worker PID: 15388; port=8787
+Health: PASS (http://127.0.0.1:8787/health; owned listener)
+HTTP status: 200; JSON: C:\Users\Terry\Desktop\context\artifacts\generated_music.json
+samples=256000 rate=32000 channels=1 bits=16
+request_id: stage-6-73ed30b891504415be0df4a0d9f1a7af
+mode: rules
+bpm: 120
+调式: E minor
+和弦: Em, D, C, D
+WAV: C:\Users\Terry\Desktop\context\artifacts\generated_music.wav
+Simulator: PASS
+Worker cleanup: private job closed (only owned processes).
+EXIT_CODE=0
+Demo generation: PASS. Listening and judging sound quality require the user.
+Exit code: 0

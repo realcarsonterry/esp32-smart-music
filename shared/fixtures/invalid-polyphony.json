@@ -1,0 +1,105 @@
+{
+  "ok": true,
+  "protocol_version": "1.0",
+  "request_id": "invalid-polyphony",
+  "mode": "rules",
+  "seed": 1,
+  "bpm": 96,
+  "time_signature": {
+    "numerator": 4,
+    "denominator": 4
+  },
+  "ppq": 480,
+  "bars": 1,
+  "key": {
+    "root": "C",
+    "mode": "major"
+  },
+  "chords": [
+    {
+      "start_tick": 0,
+      "duration_tick": 1920,
+      "symbol": "C",
+      "midi_notes": [
+        48,
+        52,
+        55,
+        60
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "p0",
+      "part": "accompaniment",
+      "midi": 48,
+      "velocity": 90,
+      "start_tick": 0,
+      "duration_tick": 200
+    },
+    {
+      "id": "p1",
+      "part": "accompaniment",
+      "midi": 49,
+      "velocity": 90,
+      "start_tick": 0,
+      "duration_tick": 200
+    },
+    {
+      "id": "p2",
+      "part": "accompaniment",
+      "midi": 50,
+      "velocity": 90,
+      "start_tick": 0,
+      "duration_tick": 200
+    },
+    {
+      "id": "p3",
+      "part": "accompaniment",
+      "midi": 51,
+      "velocity": 90,
+      "start_tick": 0,
+      "duration_tick": 200
+    },
+    {
+      "id": "p4",
+      "part": "accompaniment",
+      "midi": 52,
+      "velocity": 90,
+      "start_tick": 0,
+      "duration_tick": 200
+    },
+    {
+      "id": "p5",
+      "part": "accompaniment",
+      "midi": 53,
+      "velocity": 90,
+      "start_tick": 0,
+      "duration_tick": 200
+    },
+    {
+      "id": "p6",
+      "part": "accompaniment",
+      "midi": 54,
+      "velocity": 90,
+      "start_tick": 0,
+      "duration_tick": 200
+    },
+    {
+      "id": "p7",
+      "part": "accompaniment",
+      "midi": 55,
+      "velocity": 90,
+      "start_tick": 0,
+      "duration_tick": 200
+    },
+    {
+      "id": "p8",
+      "part": "accompaniment",
+      "midi": 56,
+      "velocity": 90,
+      "start_tick": 0,
+      "duration_tick": 200
+    }
+  ]
+}

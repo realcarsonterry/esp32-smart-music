@@ -1,0 +1,14 @@
+ascii: API HTTP 200; C simulator exit=0; samples=320000 rate=32000 channels=1 bits=16
+ascii-symbols: API HTTP 200; C simulator exit=0; samples=320000 rate=32000 channels=1 bits=16
+ascii-max: API HTTP 200; C simulator exit=0; samples=320000 rate=32000 channels=1 bits=16
+unicode: API rejected input (HTTP 400)
+nul: API rejected input (HTTP 400)
+space: API rejected input (HTTP 400)
+newline: API rejected input (HTTP 400)
+empty: API rejected input (HTTP 400)
+overlong: API rejected input (HTTP 400)
+audio route: HTTP 503; {"ok":false,"protocol_version":"1.0","request_id":"request","error":{"code":"ASR_UNAVAILABLE","message":"ASR binding is unavailable"}}
+offline audio rules: HTTP 200; ASR=1; LLM=0; C exit=0; transcript ignored (PCM identical)
+offline audio ai: HTTP 200; ASR=1; LLM=1; C exit=0; transcript ignored (PCM identical)
+Real speech / Workers AI model calls: BLOCKED (offline fake clients only)
+Cross-language contract problems found: 0

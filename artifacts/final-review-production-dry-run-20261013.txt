@@ -1,0 +1,13 @@
+
+ ⛅️ wrangler 4.149.0
+────────────────────
+Total Upload: 344.65 KiB / gzip: 66.79 KiB
+Your Worker has access to the following bindings:
+Binding                      Resource                  
+env.AI                       AI                        
+env.ALLOW_DEPLOY ("1")       Environment Variable      
+env.ALLOW_MOCK ("0")         Environment Variable      
+env.AUTH_REQUIRED ("1")      Environment Variable      
+
+--dry-run: exiting now.
+Exit code: 0

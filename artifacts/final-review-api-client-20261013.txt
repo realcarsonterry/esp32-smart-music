@@ -1,0 +1,9 @@
+HTTP 200; mode=rules; BPM=110; key=C major
+chords=C/G/Am/F
+JSON: C:\Users\Terry\Desktop\context\artifacts\api_music.json
+WAV: C:\Users\Terry\Desktop\context\artifacts\api_music.wav
+API -> shared C KS -> WAV: PASS (physical ESP32 not tested).
+API HTTP 401: UNAUTHORIZED
+Expected non-silent mono 16000 Hz 16-bit PCM WAV, at most 4 seconds
+API client integration: PASS (loopback HTTP only; no real AI or public deployment).
+Exit code: 0

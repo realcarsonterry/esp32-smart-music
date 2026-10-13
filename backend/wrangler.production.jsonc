@@ -1,0 +1,8 @@
+{
+  "name": "esp32-smart-music-api",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-10-13",
+  "workers_dev": true,
+  "ai": { "binding": "AI" },
+  "vars": { "ALLOW_DEPLOY": "1", "ALLOW_MOCK": "0", "AUTH_REQUIRED": "1" }
+}

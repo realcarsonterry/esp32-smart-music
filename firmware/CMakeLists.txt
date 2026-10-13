@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.20)
+set(EXTRA_COMPONENT_DIRS "${CMAKE_CURRENT_LIST_DIR}/../core")
+set(IDF_TARGET "esp32s3" CACHE STRING "Firmware target")
+include($ENV{IDF_PATH}/tools/cmake/project.cmake)
+project(stage_7_firmware)
+if(NOT IDF_TARGET STREQUAL "esp32s3")
+    message(FATAL_ERROR "This firmware requires esp32s3")
+endif()
